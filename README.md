@@ -169,6 +169,17 @@ Make a one time donation in a crypto currency of your choice. If you prefer to d
 Alternatively, sponsor me on Github using [Github Sponsors](https://github.com/sponsors/JKorf). 
 
 ## Release notes
+* Version 6.4.0 - 06 Feb 2026
+    * Updated CryptoExchange.Net to version 10.4.0, see https://github.com/JKorf/CryptoExchange.Net/releases/ for full release notes
+    * Added BloFinUserSpotDataTracker and BloFinUserFuturesDataTracker
+    * Added additional methods for requesting supported symbols to Shared IFuturesSymbolRestClient interfaces
+    * Added PositionMode mapping on SharedPosition models
+    * Added Status mapping for SharedDeposit models
+    * Updated socket client internal names to better support automatic timestamping adjustment
+    * Fixed disposed clients getting returned from UserClientProvider
+    * Fixed CreateSubAccountApiKeyAsync serialization issue
+    * Fixed HongKong environment naming capitalization issue
+
 * Version 6.3.0 - 22 Jan 2026
     * Updated CryptoExchange.Net to version 10.3.0, see https://github.com/JKorf/CryptoExchange.Net/releases/ for full release notes
     * Removed legacy websocket message handling and the corresponding UseUpdatedDeserialization client option
