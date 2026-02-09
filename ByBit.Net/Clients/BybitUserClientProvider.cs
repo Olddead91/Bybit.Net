@@ -12,8 +12,8 @@ namespace Bybit.Net.Clients
     /// <inheritdoc />
     public class BybitUserClientProvider : IBybitUserClientProvider
     {
-        private static ConcurrentDictionary<string, IBybitRestClient> _restClients = new ConcurrentDictionary<string, IBybitRestClient>();
-        private static ConcurrentDictionary<string, IBybitSocketClient> _socketClients = new ConcurrentDictionary<string, IBybitSocketClient>();
+        private ConcurrentDictionary<string, IBybitRestClient> _restClients = new ConcurrentDictionary<string, IBybitRestClient>();
+        private ConcurrentDictionary<string, IBybitSocketClient> _socketClients = new ConcurrentDictionary<string, IBybitSocketClient>();
 
         private readonly IOptions<BybitRestOptions> _restOptions;
         private readonly IOptions<BybitSocketOptions> _socketOptions;
