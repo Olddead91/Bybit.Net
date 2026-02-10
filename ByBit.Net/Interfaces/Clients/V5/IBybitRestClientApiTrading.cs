@@ -202,6 +202,7 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// <param name="baseAsset">Filter by base asset, for example `ETH`</param>
         /// <param name="orderId">Filter by order id</param>
         /// <param name="clientOrderId">Filter by client order id</param>
+        /// <param name="settleAsset">Filter by settle asset</param>
         /// <param name="startTime">Filter by start time</param>
         /// <param name="endTime">Filter by end time</param>
         /// <param name="tradeType">Filter by trade type</param>
@@ -209,7 +210,19 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// <param name="cursor">Pagination cursor</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
-        Task<WebCallResult<BybitResponse<BybitUserTrade>>> GetUserTradesAsync(Category category, string? symbol = null, string? baseAsset = null, string? orderId = null, string? clientOrderId = null, DateTime? startTime = null, DateTime? endTime = null, TradeType? tradeType = null, int? limit = null, string? cursor = null, CancellationToken ct = default);
+        Task<WebCallResult<BybitResponse<BybitUserTrade>>> GetUserTradesAsync(
+            Category category,
+            string? symbol = null,
+            string? baseAsset = null,
+            string? orderId = null,
+            string? clientOrderId = null,            
+            string? settleAsset = null,
+            DateTime? startTime = null, 
+            DateTime? endTime = null,
+            TradeType? tradeType = null,
+            int? limit = null,
+            string? cursor = null,
+            CancellationToken ct = default);
 
         /// <summary>
         /// Place an order

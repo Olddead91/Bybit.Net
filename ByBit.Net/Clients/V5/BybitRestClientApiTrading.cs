@@ -590,6 +590,7 @@ namespace Bybit.Net.Clients.V5
             string? baseAsset = null,
             string? orderId = null,
             string? clientOrderId = null,
+            string? settleAsset = null,
             DateTime? startTime = null,
             DateTime? endTime = null,
             TradeType? tradeType = null,
@@ -604,6 +605,7 @@ namespace Bybit.Net.Clients.V5
 
             parameters.AddOptionalParameter("symbol", symbol);
             parameters.AddOptionalParameter("baseCoin", baseAsset);
+            parameters.AddOptionalParameter("settleCoin", settleAsset);
             parameters.AddOptionalParameter("orderId", orderId);
             parameters.AddOptionalParameter("orderLinkId", clientOrderId);
             parameters.AddOptionalParameter("startTime", DateTimeConverter.ConvertToMilliseconds(startTime));
