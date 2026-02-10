@@ -880,7 +880,6 @@ namespace Bybit.Net.Clients.V5
         /// <inheritdoc />
         public async Task<WebCallResult<BybitApiKeyInfo>> EditApiKeyAsync(
             bool? readOnly = null,
-            string? ipRestrictions = null,
             bool? permissionContractTradeOrder = null,
             bool? permissionContractTradePosition = null,
             bool? permissionSpotTrade = null,
@@ -897,7 +896,6 @@ namespace Bybit.Net.Clients.V5
             var parameters = new ParameterCollection();
             if (readOnly.HasValue)
                 parameters.AddOptionalParameter("readOnly", readOnly.Value ? 1 : 0);
-            parameters.AddOptionalParameter("ips", ipRestrictions);
 
             var permissions = new Dictionary<string, List<string>>();
             AddPermission(permissions, permissionContractTradeOrder, "ContractTrade", "Order");

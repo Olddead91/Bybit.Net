@@ -95,7 +95,6 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// <para><a href="https://bybit-exchange.github.io/docs/v5/user/modify-master-apikey" /></para>
         /// </summary>
         /// <param name="readOnly">Readonly</param>
-        /// <param name="ipRestrictions">IP restrictions, comma seperated</param>
         /// <param name="permissionContractTradeOrder">Has contract order permission</param>
         /// <param name="permissionContractTradePosition">Has contract position permission</param>
         /// <param name="permissionSpotTrade">Has spot trade permission</param>
@@ -111,7 +110,6 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// <returns></returns>
         Task<WebCallResult<BybitApiKeyInfo>> EditApiKeyAsync(
             bool? readOnly = null,
-            string? ipRestrictions = null,
             bool? permissionContractTradeOrder = null,
             bool? permissionContractTradePosition = null,
             bool? permissionSpotTrade = null,
