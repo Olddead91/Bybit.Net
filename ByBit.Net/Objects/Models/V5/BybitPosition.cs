@@ -229,5 +229,10 @@ namespace Bybit.Net.Objects.Models.V5
         /// </summary>
         [JsonPropertyName("theta")]
         public decimal? Theta { get; set; }
+        /// <summary>
+        /// Break even price, only for linear/inverse
+        /// </summary>
+        [JsonPropertyName("breakEvenPrice")]
+        public decimal? BreakEvenPrice { get; set; }
     }
 }
