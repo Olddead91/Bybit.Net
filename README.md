@@ -169,6 +169,13 @@ Make a one time donation in a crypto currency of your choice. If you prefer to d
 Alternatively, sponsor me on Github using [Github Sponsors](https://github.com/sponsors/JKorf). 
 
 ## Release notes
+* Version 6.5.0 - 10 Feb 2026
+    * Updated CryptoExchange.Net to version 10.5.1, see https://github.com/JKorf/CryptoExchange.Net/releases/ for full release notes
+    * Added BreakEvenPrice property to BybitPosition model
+    * Added settleAsset parameter to GetUserTradesAsync endpoint
+    * Removed ipRestrictions parameter from restClient.V5Api.Account.EditApiKeyAsync endpoint as it's no longer supported
+    * Updated UserClientProvider internal client cache to non-static to prevent cleanup issues
+
 * Version 6.4.0 - 06 Feb 2026
     * Updated CryptoExchange.Net to version 10.4.0, see https://github.com/JKorf/CryptoExchange.Net/releases/ for full release notes
     * Added BloFinUserSpotDataTracker and BloFinUserFuturesDataTracker
