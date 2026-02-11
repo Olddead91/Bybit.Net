@@ -76,7 +76,7 @@ namespace Bybit.Net.Objects.Models.V5
         /// Price scale
         /// </summary>
         [JsonPropertyName("priceScale")]
-        public decimal PriceScale { get; set; }
+        public int PriceScale { get; set; }
         /// <summary>
         /// Unified margin trade
         /// </summary>
