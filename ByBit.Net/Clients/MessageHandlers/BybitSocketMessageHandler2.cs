@@ -20,7 +20,7 @@ namespace Bybit.Net.Clients.MessageHandlers
                 TypeIdentifierCallback = x => {
                     var topics = x.FieldValue("successTopics")!.Split(',')?.ToList() ?? new();
                     topics.AddRange(x.FieldValue("failTopics")?.Split(',') ?? []);
-                    return "resp" + string.Join("-", topics);
+                    return "resp" + string.Join("-", topics.OrderBy(x => x));
                 },
             },
 
