@@ -169,6 +169,14 @@ Make a one time donation in a crypto currency of your choice. If you prefer to d
 Alternatively, sponsor me on Github using [Github Sponsors](https://github.com/sponsors/JKorf). 
 
 ## Release notes
+* Version 6.7.0 - 24 Feb 2026
+    * Updated CryptoExchange.Net to version 10.7.0
+    * Added additional Http settings to client options
+    * Added None value to TriggerDirection enum
+    * Updated Shared REST interfaces pagination logic
+    * Updated HttpClient registration, fixing issue of DNS changes not getting processed
+    * Fixed UserClientProvider using unconfigured HttpClient
+
 * Version 6.6.1 - 18 Feb 2026
     * Fixed options websocket message topic recognition with multiple symbols
 
