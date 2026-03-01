@@ -15,7 +15,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
     {
         /// <summary>
         /// Cancel a withdrawal
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/asset/cancel-withdraw" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/asset/cancel-withdraw" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/asset/withdraw/cancel
+        /// </para>
         /// </summary>
         /// <param name="id">The id of the withdrawal to cancel</param>
         /// <param name="ct">Cancellation token</param>
@@ -24,7 +29,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Create an internal transfer between different account types
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/asset/create-inter-transfer" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/asset/create-inter-transfer" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/asset/transfer/inter-transfer
+        /// </para>
         /// </summary>
         /// <param name="asset">Asset, for example `ETH`</param>
         /// <param name="quantity">Quantity</param>
@@ -37,7 +47,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Transfer between main/sub accounts
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/asset/unitransfer" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/asset/unitransfer" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/asset/transfer/universal-transfer
+        /// </para>
         /// </summary>
         /// <param name="asset">The asset, for example `ETH`</param>
         /// <param name="quantity">Quantity</param>
@@ -52,7 +67,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get margin configuration info
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/account/account-info" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/account/account-info" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/account/info
+        /// </para>
         /// </summary>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
@@ -60,7 +80,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get all balances
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/asset/all-balance" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/asset/all-balance" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/asset/transfer/query-account-coins-balance
+        /// </para>
         /// </summary>
         /// <param name="accountType">Account type</param>
         /// <param name="memberId">Member id</param>
@@ -72,7 +97,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get allowed deposit asset info
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/asset/deposit-coin-spec" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/asset/deposit-coin-spec" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/asset/deposit/query-allowed-list
+        /// </para>
         /// </summary>
         /// <param name="asset">Filter on asset, for example `ETH`</param>
         /// <param name="network">Filter on network</param>
@@ -84,7 +114,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get api key info for the current api key
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/user/apikey-info" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/user/apikey-info" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/user/query-api
+        /// </para>
         /// </summary>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
@@ -92,7 +127,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Edit master API key settings
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/user/modify-master-apikey" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/user/modify-master-apikey" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/user/update-api
+        /// </para>
         /// </summary>
         /// <param name="readOnly">Readonly</param>
         /// <param name="permissionContractTradeOrder">Has contract order permission</param>
@@ -125,7 +165,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Delete the current API Key
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/user/rm-master-apikey" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/user/rm-master-apikey" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/user/delete-api
+        /// </para>
         /// </summary>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
@@ -133,7 +178,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get account types
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/user/wallet-type" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/user/wallet-type" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/user/get-member-type
+        /// </para>
         /// </summary>
         /// <param name="subAccountIds">Master id can request subaccount info</param>
         /// <param name="ct">Cancellation token</param>
@@ -142,7 +192,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get asset balance
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/asset/account-coin-balance" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/asset/account-coin-balance" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/asset/transfer/query-account-coin-balance
+        /// </para>
         /// </summary>
         /// <param name="accountType">Account type</param>
         /// <param name="asset">The asset, for example `ETH`</param>
@@ -154,7 +209,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get current account greek info
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/account/coin-greeks" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/account/coin-greeks" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/asset/coin-greeks
+        /// </para>
         /// </summary>
         /// <param name="baseAsset">Base asset, for example `ETH`</param>
         /// <param name="ct">Cancellation token</param>
@@ -163,7 +223,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get coin info including chain info and withdrawal and deposit status
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/asset/coin-info" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/asset/coin-info" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/asset/coin/query-info
+        /// </para>
         /// </summary>
         /// <param name="asset">Filter by asset, for example `ETH`</param>
         /// <param name="ct">Cancellation token</param>
@@ -172,7 +237,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get asset information
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/asset/asset-info" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/asset/asset-info" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/asset/transfer/query-asset-info
+        /// </para>
         /// </summary>
         /// <param name="accountType">Account type (spot only atm)</param>
         /// <param name="asset">Filter asset, for example `ETH`</param>
@@ -182,7 +252,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get wallet balance and account info
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/account/wallet-balance" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/account/wallet-balance" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/account/wallet-balance
+        /// </para>
         /// </summary>
         /// <param name="accountType">Account info</param>
         /// <param name="asset">Filter by asset, for example `ETH`</param>
@@ -192,7 +267,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get borrow history
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/account/borrow-history" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/account/borrow-history" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/account/borrow-history
+        /// </para>
         /// </summary>
         /// <param name="asset">Filter by asset, for example `ETH`</param>
         /// <param name="startTime">Filter by start time</param>
@@ -205,7 +285,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get the collateral information of the current unified margin account, including loan interest rate, loanable amount, collateral conversion rate, whether it can be mortgaged as margin, etc.
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/account/collateral-info" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/account/collateral-info" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/account/collateral-info
+        /// </para>
         /// </summary>
         /// <param name="asset">Filter by asset, for example `ETH`</param>
         /// <param name="ct">Cancellation token</param>
@@ -214,7 +299,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get delayed withdrawal amount
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/asset/delay-amount" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/asset/delay-amount" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/asset/withdraw/withdrawable-amount
+        /// </para>
         /// </summary>
         /// <param name="asset">The asset, for example `ETH`</param>
         /// <param name="ct">Cancellation token</param>
@@ -223,7 +313,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get the master deposit address for an asset
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/asset/deposit/master-deposit-addr" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/asset/deposit/master-deposit-addr" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/asset/deposit/query-address
+        /// </para>
         /// </summary>
         /// <param name="asset">Asset, for example `ETH`</param>
         /// <param name="networkType">Network type</param>
@@ -233,7 +328,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get list of deposits
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/asset/deposit/deposit-record" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/asset/deposit/deposit-record" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/asset/deposit/query-record
+        /// </para>
         /// </summary>
         /// <param name="asset">Filter by asset, for example `ETH`</param>
         /// <param name="id">Filter by id</param>
@@ -248,7 +348,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get a list of internal deposits
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/asset/deposit/internal-deposit-record" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/asset/deposit/internal-deposit-record" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/asset/deposit/query-internal-record
+        /// </para>
         /// </summary>
         /// <param name="transactionId">Filter by transaction id</param>
         /// <param name="asset">Filter by asset, for example `ETH`</param>
@@ -269,7 +374,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get fee rates
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/account/fee-rate" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/account/fee-rate" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/account/fee-rate
+        /// </para>
         /// </summary>
         /// <param name="category">Category</param>
         /// <param name="symbol">Filter by symbol, for example `ETHUSDT`</param>
@@ -280,7 +390,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get internal transfer history
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/asset/inter-transfer-list" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/asset/inter-transfer-list" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/asset/transfer/query-inter-transfer-list
+        /// </para>
         /// </summary>
         /// <param name="transferId">Filter by tansfer id</param>
         /// <param name="asset">Filter by asset, for example `ETH`</param>
@@ -295,7 +410,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get transaction logs in Unified account.
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/account/transaction-log" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/account/transaction-log" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/account/transaction-log
+        /// </para>
         /// </summary>
         /// <param name="accountType">Filter by account type</param>
         /// <param name="category">Filter by category</param>
@@ -312,7 +432,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get classic account, contract transaction logs
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/account/contract-transaction-log" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/account/contract-transaction-log" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/account/contract-transaction-log
+        /// </para>
         /// </summary>
         /// <param name="asset">Filter by asset, for example `ETH`</param>
         /// <param name="baseAsset">Filter by base asset</param>
@@ -335,7 +460,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get a list of transferable assets between accounts
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/asset/transferable-coin" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/asset/transferable-coin" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/asset/transfer/query-transfer-coin-list
+        /// </para>
         /// </summary>
         /// <param name="fromAccountType">From account type</param>
         /// <param name="toAccountType">To account type</param>
@@ -345,7 +475,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get universal transfer history
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/asset/unitransfer-list" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/asset/unitransfer-list" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/asset/transfer/query-universal-transfer-list
+        /// </para>
         /// </summary>
         /// <param name="transferId">Filter by tansfer id</param>
         /// <param name="asset">Filter by asset, for example `ETH`</param>
@@ -360,7 +495,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get withdrawal history
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/asset/withdraw/withdraw-record" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/asset/withdraw/withdraw-record" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/asset/withdraw/query-record
+        /// </para>
         /// </summary>
         /// <param name="withdrawId">Filter by withdrawal id</param>
         /// <param name="asset">Filter by asset, for example `ETH`</param>
@@ -376,7 +516,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Set auto add margin
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/position/add-margin" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/position/add-margin" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/position/set-auto-add-margin
+        /// </para>
         /// </summary>
         /// <param name="category">Category</param>
         /// <param name="symbol">Symbol, for example `ETHUSDT`</param>
@@ -388,7 +533,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Set the account deposits are credited to
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/asset/set-deposit-acct" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/asset/set-deposit-acct" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/asset/deposit/deposit-to-account
+        /// </para>
         /// </summary>
         /// <param name="accountType">The account</param>
         /// <param name="ct">Cancellation token</param>
@@ -397,7 +547,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Set leverage
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/position/leverage" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/position/leverage" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/position/set-leverage
+        /// </para>
         /// </summary>
         /// <param name="category">Category</param>
         /// <param name="symbol">Symbol, for example `ETHUSDT`</param>
@@ -409,7 +564,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Set whether an asset should be used for collateral
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/account/set-collateral" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/account/set-collateral" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/account/set-collateral-switch
+        /// </para>
         /// </summary>
         /// <param name="asset">The asset. USDT and USDC can't be switched off</param>
         /// <param name="useForCollateral">Use the asset for collateral</param>
@@ -422,7 +582,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Set whether assets should be used for collateral
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/account/batch-set-collateral" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/account/batch-set-collateral" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/account/set-collateral-switch-batch
+        /// </para>
         /// </summary>
         /// <param name="assets">The assets configuration</param>
         /// <param name="ct">Cancellation token</param>
@@ -433,7 +598,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Set the margin mode
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/account/set-margin-mode" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/account/set-margin-mode" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/account/set-margin-mode
+        /// </para>
         /// </summary>
         /// <param name="marginMode">Margin mode</param>
         /// <param name="ct">Cancellation token</param>
@@ -443,7 +613,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// <summary>
         /// DEPRECATED, SEE https://announcements.bybit.com/en/article/risk-limit-update-transitioning-from-manual-to-auto-adjustment-bltf0fa535064561d9d/
         /// Set the risk limit
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/position/set-risk-limit" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/position/set-risk-limit" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/position/set-risk-limit
+        /// </para>
         /// </summary>
         /// <param name="category">Category</param>
         /// <param name="symbol">Symbol, for example `ETHUSDT`</param>
@@ -455,7 +630,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Set take profit/stop loss mode
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/position/tpsl-mode" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/position/tpsl-mode" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/position/set-tpsl-mode
+        /// </para>
         /// </summary>
         /// <param name="category">Category</param>
         /// <param name="symbol">Symbol, for example `ETHUSDT`</param>
@@ -466,7 +646,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Switch cross or isolated margin mode
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/position/cross-isolate" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/position/cross-isolate" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/position/switch-isolated
+        /// </para>
         /// </summary>
         /// <param name="category">Category</param>
         /// <param name="symbol">Symbol, for example `ETHUSDT`</param>
@@ -479,7 +664,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Switch position mode
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/position/position-mode" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/position/position-mode" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/position/switch-mode
+        /// </para>
         /// </summary>
         /// <param name="category">Category</param>
         /// <param name="mode">Mode</param>
@@ -491,7 +681,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Withdraw funds
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/asset/withdraw" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/asset/withdraw" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/asset/withdraw/create
+        /// </para>
         /// </summary>
         /// <param name="asset">Asset, for example `ETH`</param>
         /// <param name="network">Network to use</param>
@@ -507,7 +702,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Manually add or reduce margin for isolated margin position
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/position/manual-add-margin" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/position/manual-add-margin" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/position/add-margin
+        /// </para>
         /// </summary>
         /// <param name="category">Category</param>
         /// <param name="symbol">Symbol, for example `ETHUSDT`</param>
@@ -524,7 +724,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Set the user's maximum leverage in spot cross margin
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/spot-margin-uta/set-leverage" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/spot-margin-uta/set-leverage" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/spot-margin-trade/set-leverage
+        /// </para>
         /// </summary>
         /// <param name="leverage">New leverage</param>
         /// <param name="asset">Asset name</param>
@@ -534,7 +739,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Query the Spot margin status and leverage of Unified account
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/spot-margin-uta/status" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/spot-margin-uta/status" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/spot-margin-trade/state
+        /// </para>
         /// </summary>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
@@ -542,7 +752,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Turn on / off spot margin trade
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/spot-margin-uta/status" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/spot-margin-uta/status" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/spot-margin-trade/switch-mode
+        /// </para>
         /// </summary>
         /// <param name="spotMarginMode">True to enable, false to disable</param>
         /// <param name="ct">Cancellation token</param>
@@ -551,7 +766,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get spot margin data
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/spot-margin-uta/vip-margin" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/spot-margin-uta/vip-margin" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/spot-margin-trade/data
+        /// </para>
         /// </summary>
         /// <param name="asset">Filter by asset, for example `ETH`</param>
         /// <param name="vipLevel">Filter by VIP level</param>
@@ -561,7 +781,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get spot margin interest rate history
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/spot-margin-uta/vip-margin" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/spot-margin-uta/vip-margin" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/spot-margin-trade/interest-rate-history
+        /// </para>
         /// </summary>
         /// <param name="asset">The asset, for example `ETH`</param>
         /// <param name="vipLevel">VIP level. If not set uses the account VIP level</param>
@@ -573,7 +798,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get broker earnings
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/broker/exchange-earning" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/broker/exchange-earning" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/broker/earnings-info
+        /// </para>
         /// </summary>
         /// <param name="bizType">Filter by bizType</param>
         /// <param name="startTime">Filter by start time</param>
@@ -587,7 +817,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get broker account info
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/broker/account-info" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/broker/account-info" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/broker/account-info
+        /// </para>
         /// </summary>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
@@ -595,7 +830,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Set spot hedging mode
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/account/set-spot-hedge" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/account/set-spot-hedge" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/account/set-hedging-mode
+        /// </para>
         /// </summary>
         /// <param name="spotHedgingMode">Hedging mode on or not</param>
         /// <param name="ct">Cancellation token</param>
@@ -604,7 +844,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Manually repay the liabilities of Unified account
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/account/repay-liability" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/account/repay-liability" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/account/quick-repayment
+        /// </para>
         /// </summary>
         /// <param name="asset">Only repay this asset; if null repay all assets</param>
         /// <param name="ct">Cancellation token</param>
@@ -613,7 +858,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Request funds for demo trading
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/demo#request-demo-trading-funds" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/demo#request-demo-trading-funds" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/account/demo-apply-money
+        /// </para>
         /// </summary>
         /// <param name="funds">Dictionary of the asset and amount you want to receive. Only BTC, ETH, USDT or USDC supported</param>
         /// <param name="addOrReduce">Whether to add(true, default) or reduce (false) the funds with the amounts</param>
@@ -623,7 +873,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get convert assets list
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/asset/convert/convert-coin-list" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/asset/convert/convert-coin-list" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/asset/exchange/query-coin-list
+        /// </para>
         /// </summary>
         /// <param name="accountType">Account type</param>
         /// <param name="asset">Filter by asset, for example `USDT`</param>
@@ -634,7 +889,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get a convert quote for 2 assets
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/asset/convert/apply-quote" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/asset/convert/apply-quote" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/asset/exchange/quote-apply
+        /// </para>
         /// </summary>
         /// <param name="accountType">Account type</param>
         /// <param name="fromAsset">From asset (selling)</param>
@@ -647,7 +907,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Confirm a convert quote and start the conversion
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/asset/convert/confirm-quote" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/asset/convert/confirm-quote" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/asset/exchange/convert-execute
+        /// </para>
         /// </summary>
         /// <param name="quoteTransactionId">The quote transaction id to confirm</param>
         /// <param name="ct">Cancellation token</param>
@@ -656,7 +921,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get status of a convert transaction
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/asset/convert/get-convert-result" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/asset/convert/get-convert-result" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/asset/exchange/convert-result-query
+        /// </para>
         /// </summary>
         /// <param name="accountType">Account type</param>
         /// <param name="quoteTransactionId">Transaction id</param>
@@ -666,7 +936,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get convert history
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/asset/convert/get-convert-history" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/asset/convert/get-convert-history" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/asset/exchange/query-convert-history
+        /// </para>
         /// </summary>
         /// <param name="accountType">Filter by account type</param>
         /// <param name="page">Page</param>
@@ -677,7 +952,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get quantity available for withdrawal/transfer from unified wallet
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/account/unified-trans-amnt" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/account/unified-trans-amnt" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/account/withdrawal
+        /// </para>
         /// </summary>
         /// <param name="asset">Asset name</param>
         /// <param name="ct">Cancellation token</param>
@@ -686,7 +966,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get quantity available for withdrawal/transfer from unified wallet
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/account/unified-trans-amnt" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/account/unified-trans-amnt" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/account/withdrawal
+        /// </para>
         /// </summary>
         /// <param name="assets">Asset names, can request up to 20 assets</param>
         /// <param name="ct">Cancellation token</param>
@@ -695,7 +980,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Set the behavior when placing an order exceeding the price limit
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/account/set-price-limit" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/account/set-price-limit" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/account/set-limit-px-action
+        /// </para>
         /// </summary>
         /// <param name="category">Category</param>
         /// <param name="allowModifyPrice">True: allow the system to adjust the price to nearest allowed, False: fail the order</param>
@@ -704,7 +994,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get spot symbols available to the user
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/account/instrument" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/account/instrument" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/account/instruments-info
+        /// </para>
         /// </summary>
         /// <param name="symbol">Filter by symbol</param>
         /// <param name="limit">Number of results, max 200</param>
@@ -714,7 +1009,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get linear/inverse symbols available to the user
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/account/instrument" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/account/instrument" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/account/instruments-info
+        /// </para>
         /// </summary>
         /// <param name="category">Category, either linear or inverse</param>
         /// <param name="symbol">Filter by symbol</param>
@@ -730,7 +1030,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get withdrawal addresses
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/asset/withdraw/withdraw-address" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/asset/withdraw/withdraw-address" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/asset/withdraw/query-address
+        /// </para>
         /// </summary>
         /// <param name="asset">Filter by asset</param>
         /// <param name="network">Filter by network</param>
@@ -748,7 +1053,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get small balance assets
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/asset/convert-small-balance/small-balanc-coins" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/asset/convert-small-balance/small-balanc-coins" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/asset/covert/small-balance-list
+        /// </para>
         /// </summary>
         /// <param name="accountType">Account type</param>
         /// <param name="fromAsset">From asset filter</param>
@@ -760,7 +1070,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get small balance exchange quote
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/asset/convert-small-balance/request-quote" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/asset/convert-small-balance/request-quote" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/asset/covert/get-quote
+        /// </para>
         /// </summary>
         /// <param name="accountType">Account type</param>
         /// <param name="fromAssets">Assets to convert</param>
@@ -774,7 +1089,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Confirm small balances exchange quote
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/asset/convert-small-balance/confirm-quote" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/asset/convert-small-balance/confirm-quote" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/asset/covert/small-balance-execute
+        /// </para>
         /// </summary>
         /// <param name="quoteId">Quote id</param>
         /// <param name="ct">Cancellation token</param>
@@ -784,7 +1104,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get small balances exchange history
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/asset/convert-small-balance/exchange-history" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/asset/convert-small-balance/exchange-history" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/asset/covert/small-balance-history
+        /// </para>
         /// </summary>
         /// <param name="accountType">Filter by account</param>
         /// <param name="quoteId">Filter by quote id</param>
@@ -804,7 +1129,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Set Spot Margin auto repay mode
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/spot-margin-uta/set-auto-repay-mode" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/spot-margin-uta/set-auto-repay-mode" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/spot-margin-trade/set-auto-repay-mode
+        /// </para>
         /// </summary>
         /// <param name="asset">Asset. If not provided set for all assets</param>
         /// <param name="enabled">Enable or not</param>
@@ -813,7 +1143,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get Spot Margin auto repay mode
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/spot-margin-uta/get-auto-repay-mode" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/spot-margin-uta/get-auto-repay-mode" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/spot-margin-trade/get-auto-repay-mode
+        /// </para>
         /// </summary>
         /// <param name="asset">Asset. If not provided get mode for all assets</param>
         /// <param name="ct">Cancellation token</param>

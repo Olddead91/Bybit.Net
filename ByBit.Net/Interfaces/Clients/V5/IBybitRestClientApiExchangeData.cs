@@ -14,7 +14,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
     {
         /// <summary>
         /// Get server announcements
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/announcement" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/announcement" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/announcements/index
+        /// </para>
         /// </summary>
         /// <param name="locale">Language, for example en-US</param>
         /// <param name="type">Filter by type</param>
@@ -27,7 +32,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get server time
-        /// <para><a href="https://bybit-exchange.github.io/docs/v3/server-time" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v3/server-time" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/market/time
+        /// </para>
         /// </summary>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
@@ -35,7 +45,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get delivery price
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/market/delivery-price" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/market/delivery-price" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/market/delivery-price
+        /// </para>
         /// </summary>
         /// <param name="category">Category</param>
         /// <param name="symbol">Filter by symbol, for example `ETHUSDT`</param>
@@ -49,7 +64,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get funding rate history
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/market/history-fund-rate" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/market/history-fund-rate" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/market/funding/history
+        /// </para>
         /// </summary>
         /// <param name="category">Category</param>
         /// <param name="symbol">Symbol, for example `ETHUSDT`</param>
@@ -62,7 +82,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get historical volatility
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/market/iv" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/market/iv" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/market/historical-volatility
+        /// </para>
         /// </summary>
         /// <param name="baseAsset">Filter by base asset, for example `ETH`</param>
         /// <param name="quoteAsset">Quote asset, `USD` or `USDT`</param>
@@ -77,7 +102,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get index price klines
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/market/index-kline" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/market/index-kline" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/market/index-price-kline
+        /// </para>
         /// </summary>
         /// <param name="category">Category</param>
         /// <param name="symbol">Symbol, for example `ETHUSDT`</param>
@@ -91,7 +121,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get insurance pool data
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/market/insurance" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/market/insurance" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/market/insurance
+        /// </para>
         /// </summary>
         /// <param name="asset">Asset, for example `ETH`</param>
         /// <param name="ct">Cancellation token</param>
@@ -100,7 +135,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get klines
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/market/kline" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/market/kline" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/market/kline
+        /// </para>
         /// </summary>
         /// <param name="category">Category</param>
         /// <param name="symbol">Symbol, for example `ETHUSDT`</param>
@@ -114,7 +154,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get linear/inverse symbols
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/market/instrument" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/market/instrument" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/market/instruments-info
+        /// </para>
         /// </summary>
         /// <param name="category">Category</param>
         /// <param name="symbol">Symbol, for example `ETHUSDT`</param>
@@ -137,7 +182,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get linear/inverse tickers
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/market/tickers" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/market/tickers" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/market/tickers
+        /// </para>
         /// </summary>
         /// <param name="category">Category</param>
         /// <param name="symbol">Symbol, for example `ETHUSDT`</param>
@@ -149,7 +199,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get mark price klines
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/market/mark-kline" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/market/mark-kline" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/market/mark-price-kline
+        /// </para>
         /// </summary>
         /// <param name="category">Category</param>
         /// <param name="symbol">Symbol, for example `ETHUSDT`</param>
@@ -163,7 +218,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get open interest
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/market/open-interest" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/market/open-interest" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/market/open-interest
+        /// </para>
         /// </summary>
         /// <param name="category">Category</param>
         /// <param name="symbol">Symbol, for example `ETHUSDT`</param>
@@ -178,7 +238,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get option symbols
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/market/instrument" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/market/instrument" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/market/instruments-info
+        /// </para>
         /// </summary>
         /// <param name="symbol">Symbol, for example `ETHUSDT`</param>
         /// <param name="baseAsset">Base asset, for example `ETH`</param>
@@ -190,7 +255,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get option tickers
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/market/tickers" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/market/tickers" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/market/tickers
+        /// </para>
         /// </summary>
         /// <param name="symbol">Filter by symbol, for example `ETHUSDT`</param>
         /// <param name="baseAsset">Filter by asset, for example `ETH`</param>
@@ -201,7 +271,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get order book
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/market/orderbook" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/market/orderbook" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/market/orderbook
+        /// </para>
         /// </summary>
         /// <param name="category">Category</param>
         /// <param name="symbol">Symbol, for example `ETHUSDT`</param>
@@ -212,7 +287,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get RPI order book
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/market/rpi-orderbook" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/market/rpi-orderbook" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/market/rpi_orderbook
+        /// </para>
         /// </summary>
         /// <param name="category">Category</param>
         /// <param name="symbol">Symbol, for example `ETHUSDT`</param>
@@ -222,7 +302,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get premium index klines
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/market/preimum-index-kline" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/market/preimum-index-kline" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/market/premium-index-price-kline
+        /// </para>
         /// </summary>
         /// <param name="category">Category</param>
         /// <param name="symbol">Symbol, for example `ETHUSDT`</param>
@@ -246,7 +331,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get spot symbols
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/market/instrument" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/market/instrument" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/market/instruments-info
+        /// </para>
         /// </summary>
         /// <param name="symbol">Filter by symbol, for example `ETHUSDT`</param>
         /// <param name="ct">Cancellation token</param>
@@ -255,7 +345,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Spot tickers
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/market/tickers" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/market/tickers" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/market/tickers
+        /// </para>
         /// </summary>
         /// <param name="symbol">Filter by symbol, for example `ETHUSDT`</param>
         /// <param name="ct">Cancellation token</param>
@@ -264,7 +359,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get trade history
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/market/recent-trade" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/market/recent-trade" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/market/recent-trade
+        /// </para>
         /// </summary>
         /// <param name="category">Category</param>
         /// <param name="symbol">Symbol, for example `ETHUSDT`</param>
@@ -277,7 +377,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get leverage token info
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/lt/leverage-token-info" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/lt/leverage-token-info" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/spot-lever-token/info
+        /// </para>
         /// </summary>
         /// <param name="leverageToken">Filter by token</param>
         /// <param name="ct">Cancellation token</param>
@@ -286,7 +391,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get leveraged token market info
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/lt/leverage-token-reference" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/lt/leverage-token-reference" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/spot-lever-token/reference
+        /// </para>
         /// </summary>
         /// <param name="leverageToken">Token</param>
         /// <param name="ct">Cancellation token</param>
@@ -295,7 +405,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get long/short ratio history
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/market/long-short-ratio" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/market/long-short-ratio" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/market/account-ratio
+        /// </para>
         /// </summary>
         /// <param name="category">Category</param>
         /// <param name="symbol">Symbol, for example `ETHUSDT`</param>
@@ -309,7 +424,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get UTA loan tiered collateral ratio
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/spot-margin-uta/tier-collateral-ratio" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/spot-margin-uta/tier-collateral-ratio" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/spot-margin-trade/collateral
+        /// </para>
         /// </summary>
         /// <param name="asset">Filter by asset</param>
         /// <param name="ct">Cancellation token</param>
@@ -318,7 +438,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get spread trading symbols
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/spread/market/instrument" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/spread/market/instrument" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/spread/instrument
+        /// </para>
         /// </summary>
         /// <param name="symbol">Filter by symbol, for example `ETHUSDT`</param>
         /// <param name="baseAsset">Filter by base asset</param>
@@ -329,7 +454,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get spread trading order book
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/spread/market/orderbook" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/spread/market/orderbook" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/spread/orderbook
+        /// </para>
         /// </summary>
         /// <param name="symbol">The symbol, for example `ETHUSDT`</param>
         /// <param name="limit">Max number of results, max 25</param>
@@ -338,7 +468,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get spread tickers
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/spread/market/tickers" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/spread/market/tickers" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/spread/tickers
+        /// </para>
         /// </summary>
         /// <param name="symbol">The symbol, for example `ETHUSDT`</param>
         /// <param name="ct">Cancellation token</param>
@@ -346,7 +481,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get spread symbol recent trades
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/spread/market/recent-trade" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/spread/market/recent-trade" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/spread/recent-trade
+        /// </para>
         /// </summary>
         /// <param name="symbol">The symbol, for example `ETHUSDT`</param>
         /// <param name="limit">Max number of results, max 1000</param>
@@ -355,7 +495,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get order price limits
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/market/order-price-limit" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/market/order-price-limit" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/market/price-limit
+        /// </para>
         /// </summary>
         /// <param name="symbol">Symbol name, for example `ETHUSDT`</param>
         /// <param name="category">Category. Defaults to Linear</param>
@@ -364,7 +509,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get the system status messages
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/system-status" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/system-status" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/system/status
+        /// </para>
         /// </summary>
         /// <param name="id">Filter by id</param>
         /// <param name="status">Filter by status</param>
@@ -373,7 +523,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get ADL alerts
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/market/adl-alert" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/market/adl-alert" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/market/adlAlert
+        /// </para>
         /// </summary>
         /// <param name="symbol">The symbol, for example `ETHUSDT`</param>
         /// <param name="ct">Cancellation token</param>
@@ -381,7 +536,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get components which make up the index price
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/market/index-components" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/market/index-components" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/market/index-price-components
+        /// </para>
         /// </summary>
         /// <param name="indexName">Index name</param>
         /// <param name="ct">Cancellation token</param>

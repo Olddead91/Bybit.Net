@@ -13,7 +13,12 @@ namespace Bybit.Net.Clients.V5
     {
         /// <summary>
         /// Create a new sub account
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/user/create-subuid" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/user/create-subuid" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/user/create-sub-member
+        /// </para>
         /// </summary>
         /// <param name="username">Username</param>
         /// <param name="type">Account type</param>
@@ -27,7 +32,12 @@ namespace Bybit.Net.Clients.V5
 
         /// <summary>
         /// Create a new API key for a sub account
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/user/create-subuid-apikey" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/user/create-subuid-apikey" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/user/create-sub-api
+        /// </para>
         /// </summary>
         /// <param name="subAccountId">Subaccount id</param>
         /// <param name="readOnly">Readonly key</param>
@@ -60,7 +70,12 @@ namespace Bybit.Net.Clients.V5
 
         /// <summary>
         /// Get list of subaccounts
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/user/subuid-list" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/user/subuid-list" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/user/query-sub-members
+        /// </para>
         /// </summary>
         /// <param name="ct">Cancelation token</param>
         /// <returns></returns>
@@ -68,7 +83,12 @@ namespace Bybit.Net.Clients.V5
 
         /// <summary>
         /// Edit API key. Note that permissions starting with the same topic (for example `permissionContractTradeOrder` and `permissionContractTradePosition` or `permissionWalletTransfer` and `permissionWalletSubAccountTransfer`) can not be adjusted separately and should both be set when changing one of the values.
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/user/modify-sub-apikey" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/user/modify-sub-apikey" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/user/update-sub-api
+        /// </para>
         /// </summary>
         /// <param name="apiKey">Api key, should be passed if editing from Master account, should be null if editing own API key from sub account</param>
         /// <param name="readOnly">Readonly</param>
@@ -99,7 +119,12 @@ namespace Bybit.Net.Clients.V5
 
         /// <summary>
         /// Delete an API key
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/user/rm-sub-apikey" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/user/rm-sub-apikey" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/user/delete-sub-api
+        /// </para>
         /// </summary>
         /// <param name="apiKey">Api key, should be passed if deleting from Master account, should be null if editing own API key from sub account</param>
         /// <param name="ct">Cancelation token</param>
@@ -108,7 +133,12 @@ namespace Bybit.Net.Clients.V5
 
         /// <summary>
         /// Get deposit address for a sub account, only available for master account
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/asset/deposit/sub-deposit-addr" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/asset/deposit/sub-deposit-addr" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/asset/deposit/query-sub-member-address
+        /// </para>
         /// </summary>
         /// <param name="subAccountId"></param>
         /// <param name="asset"></param>

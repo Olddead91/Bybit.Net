@@ -15,7 +15,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
     {
         /// <summary>
         /// Cancel all orders
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/order/cancel-all" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/order/cancel-all" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/order/cancel-all
+        /// </para>
         /// </summary>
         /// <param name="category">Category</param>
         /// <param name="symbol">Filter by symbol, for example `ETHUSDT`</param>
@@ -29,7 +34,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Cancel order
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/order/cancel-order" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/order/cancel-order" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/order/cancel
+        /// </para>
         /// </summary>
         /// <param name="category">Category</param>
         /// <param name="symbol">Symbol, for example `ETHUSDT`</param>
@@ -42,7 +52,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Edit an order
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/order/amend-order" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/order/amend-order" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/order/amend
+        /// </para>
         /// </summary>
         /// <param name="category">Category</param>
         /// <param name="symbol">Symbol, for example `ETHUSDT`</param>
@@ -83,7 +98,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get asset exchange history
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/asset/exchange" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/asset/exchange" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/asset/exchange/order-record
+        /// </para>
         /// </summary>
         /// <param name="fromAsset">Filter by from asset</param>
         /// <param name="toAsset">Filter by to asset</param>
@@ -95,7 +115,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get spot borrow quota
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/order/spot-borrow-quota" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/order/spot-borrow-quota" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/order/spot-borrow-check
+        /// </para>
         /// </summary>
         /// <param name="symbol">Symbol, for example `ETHUSDT`</param>
         /// <param name="side">Side</param>
@@ -105,7 +130,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get delivery history
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/asset/delivery" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/asset/delivery" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/asset/delivery-record
+        /// </para>
         /// </summary>
         /// <param name="category">Category</param>
         /// <param name="symbol">Filter by symbol, for example `ETHUSDT`</param>
@@ -120,7 +150,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get real-time open orders
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/order/open-order" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/order/open-order" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/order/realtime
+        /// </para>
         /// </summary>
         /// <param name="category">Category</param>
         /// <param name="symbol">Filter by symbol, for example `ETHUSDT`</param>
@@ -138,7 +173,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get order history
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/order/order-list" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/order/order-list" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/order/history
+        /// </para>
         /// </summary>
         /// <param name="category">Category</param>
         /// <param name="symbol">Filter by symbol, for example `ETHUSDT`</param>
@@ -157,7 +197,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get positions
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/position" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/position" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/position/list
+        /// </para>
         /// </summary>
         /// <param name="category">Category</param>
         /// <param name="symbol">Filter by symbol, for example `ETHUSDT`</param>
@@ -171,7 +216,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Confirm risk limit after being marked as only reducing positions
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/position/confirm-mmr" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/position/confirm-mmr" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/position/confirm-pending-mmr
+        /// </para>
         /// </summary>
         /// <param name="category">Category</param>
         /// <param name="symbol">Symbol, for example `ETHUSDT`</param>
@@ -181,7 +231,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get settlement history
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/asset/settlement" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/asset/settlement" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/asset/settlement-record
+        /// </para>
         /// </summary>
         /// <param name="category">Category</param>
         /// <param name="symbol">Filter by symbol, for example `ETHUSDT`</param>
@@ -195,7 +250,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get user trade history
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/order/execution" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/order/execution" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/execution/list
+        /// </para>
         /// </summary>
         /// <param name="category">Category</param>
         /// <param name="symbol">Filter by symbol, for example `ETHUSDT`</param>
@@ -226,7 +286,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Place an order
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/order/create-order" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/order/create-order" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/order/create
+        /// </para>
         /// </summary>
         /// <param name="category">Category</param>
         /// <param name="symbol">Symbol, for example `ETHUSDT`</param>
@@ -301,7 +366,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Set cancel all timeout on websocket disconnect
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/order/dcp" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/order/dcp" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/order/disconnected-cancel-all
+        /// </para>
         /// </summary>
         /// <param name="windowSeconds">Time after which to cancel all orders</param>
         /// <param name="productType">Type of product, defaults to Options</param>
@@ -311,7 +381,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get DisconnectCancelAll/dcp configuration
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/account/dcp-info" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/account/dcp-info" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/account/query-dcp-info
+        /// </para>
         /// </summary>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
@@ -319,7 +394,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Set trading stop parameters
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/position/trading-stop" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/position/trading-stop" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/position/trading-stop
+        /// </para>
         /// </summary>
         /// <param name="category">Category</param>
         /// <param name="symbol">Symbol, for example `ETHUSDT`</param>
@@ -360,7 +440,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get closed profit and loss
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/position/close-pnl" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/position/close-pnl" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/position/closed-pnl
+        /// </para>
         /// </summary>
         /// <param name="category">Category</param>
         /// <param name="symbol">Filter by symbol, for example `ETHUSDT`</param>
@@ -374,7 +459,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Place multiple orders. Note that a successful response doesn't mean all orders were correctly processed; check the order results in the call response.
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/order/batch-place" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/order/batch-place" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/order/create-batch
+        /// </para>
         /// </summary>
         /// <param name="category">The category</param>
         /// <param name="orderRequests">Request data</param>
@@ -387,7 +477,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Cancel multiple orders. Note that a successful response doesn't mean all orders were correctly processed; check the order results in the call response.
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/order/batch-cancel" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/order/batch-cancel" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/order/cancel-batch
+        /// </para>
         /// </summary>
         /// <param name="category">The category</param>
         /// <param name="orderRequests">Request data</param>
@@ -400,7 +495,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Edit multiple orders. Note that a successful response doesn't mean all orders were correctly processed; check the order results in the call response.
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/order/batch-amend" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/order/batch-amend" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/order/amend-batch
+        /// </para>
         /// </summary>
         /// <param name="category">The category</param>
         /// <param name="orderRequests">Request data</param>
@@ -413,7 +513,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Purchase a leverage token
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/lt/purchase" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/lt/purchase" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/spot-lever-token/purchase
+        /// </para>
         /// </summary>
         /// <param name="token">Token id</param>
         /// <param name="quantity">Quantity</param>
@@ -424,7 +529,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Redeem a leverage token
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/lt/redeem" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/lt/redeem" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/spot-lever-token/redeem
+        /// </para>
         /// </summary>
         /// <param name="token">Token id</param>
         /// <param name="quantity">Quantity</param>
@@ -435,7 +545,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get leverage token order history
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/lt/order-record" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/lt/order-record" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/spot-lever-token/order-record
+        /// </para>
         /// </summary>
         /// <param name="token">Filter by token</param>
         /// <param name="orderId">Filter by order id</param>
@@ -450,7 +565,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Place a new spread order
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/spread/trade/create-order" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/spread/trade/create-order" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/spread/order/create
+        /// </para>
         /// </summary>
         /// <param name="symbol">The symbol</param>
         /// <param name="side">Order side</param>
@@ -464,7 +584,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Edit an active spread order
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/spread/trade/amend-order" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/spread/trade/amend-order" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/spread/order/amend
+        /// </para>
         /// </summary>
         /// <param name="symbol">The symbol, for example `ETHUSDT`</param>
         /// <param name="orderId">Order id, either this or clientOrderId should be provided</param>
@@ -476,7 +601,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Cancel an active spread order
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/spread/trade/cancel-order" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/spread/trade/cancel-order" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/spread/order/cancel
+        /// </para>
         /// </summary>
         /// <param name="orderId">Order id of order to cancel, either this or clientOrderId should be provided</param>
         /// <param name="clientOrderId">Client order id of order to cancel, either this or orderId should be provided</param>
@@ -485,7 +615,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Cancel all spread orders
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/spread/trade/cancel-all" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/spread/trade/cancel-all" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/spread/order/cancel-all
+        /// </para>
         /// </summary>
         /// <param name="symbol">Filter orders to cancel by symbol</param>
         /// <param name="cancelAll">Cancel all</param>
@@ -494,7 +629,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get open spread orders
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/spread/trade/open-order" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/spread/trade/open-order" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/spread/order/realtime
+        /// </para>
         /// </summary>
         /// <param name="symbol">Filter by symbol</param>
         /// <param name="baseAsset">Filter by base asset</param>
@@ -507,7 +647,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get spread order history
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/spread/trade/order-history" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/spread/trade/order-history" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/spread/order/history
+        /// </para>
         /// </summary>
         /// <param name="symbol">Filter by symbol</param>
         /// <param name="baseAsset">Filter by base asset</param>
@@ -522,7 +667,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// 
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/spread/trade/trade-history" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/spread/trade/trade-history" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/spread/execution/list
+        /// </para>
         /// </summary>
         /// <param name="symbol">Filter by symbol</param>
         /// <param name="orderId">Filter by order id</param>
@@ -536,7 +686,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Calculate margin changes for an order before placing it
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/order/pre-check-order" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/order/pre-check-order" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/order/pre-check
+        /// </para>
         /// </summary>
         /// <param name="category">Category</param>
         /// <param name="symbol">Symbol, for example `ETHUSDT`</param>

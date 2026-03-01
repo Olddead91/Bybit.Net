@@ -13,7 +13,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
     {
         /// <summary>
         /// Get Earn product info
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/earn/product-info" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/earn/product-info" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/earn/product
+        /// </para>
         /// </summary>
         /// <param name="category">Earn category</param>
         /// <param name="asset">The asset, for example `ETH`</param>
@@ -22,7 +27,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Place a new Stake or Redeem order
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/earn/create-order" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/earn/create-order" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/earn/place-order
+        /// </para>
         /// </summary>
         /// <param name="category">Earn category</param>
         /// <param name="productId">Product id</param>
@@ -37,7 +47,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get order history
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/earn/order-history" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/earn/order-history" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/earn/order
+        /// </para>
         /// </summary>
         /// <param name="category">Earn category</param>
         /// <param name="orderId">Order id</param>
@@ -47,7 +62,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get staked positions
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/earn/position" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/earn/position" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/earn/position
+        /// </para>
         /// </summary>
         /// <param name="category">Earn category</param>
         /// <param name="productId">Filter by product id</param>

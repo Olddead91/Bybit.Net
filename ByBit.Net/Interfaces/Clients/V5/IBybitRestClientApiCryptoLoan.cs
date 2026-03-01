@@ -13,7 +13,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
     {
         /// <summary>
         /// Get collateral assets
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/crypto-loan/collateral-coin" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/crypto-loan/collateral-coin" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/crypto-loan/collateral-data
+        /// </para>
         /// </summary>
         /// <param name="level">Account level</param>
         /// <param name="asset">Filter by asset</param>
@@ -26,7 +31,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get borrowable asssets
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/crypto-loan/loan-coin" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/crypto-loan/loan-coin" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/crypto-loan/loanable-data
+        /// </para>
         /// </summary>
         /// <param name="accountLevel">Filter by account level</param>
         /// <param name="asset">Filter by asset, for example `ETH`</param>
@@ -35,7 +45,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get borrow/collateral limits
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/crypto-loan/acct-borrow-collateral" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/crypto-loan/acct-borrow-collateral" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/crypto-loan/borrowable-collateralisable-number
+        /// </para>
         /// </summary>
         /// <param name="loanAsset">The loan asset, for example `ETH`</param>
         /// <param name="collateralAsset">The collateral asset, for example `ETH`</param>
@@ -44,7 +59,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Borrow an asset
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/crypto-loan/borrow" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/crypto-loan/borrow" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/crypto-loan/borrow
+        /// </para>
         /// </summary>
         /// <param name="loanAsset">The loan asset, for example `ETH`</param>
         /// <param name="collateralAsset">The collateral asset, for example `ETH`</param>
@@ -56,7 +76,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Repay a loan
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/crypto-loan/repay" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/crypto-loan/repay" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/crypto-loan/repay
+        /// </para>
         /// </summary>
         /// <param name="orderId">Loan order id</param>
         /// <param name="quantity">Quantity to repay</param>
@@ -65,7 +90,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get unpaid loans
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/crypto-loan/unpaid-loan-order" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/crypto-loan/unpaid-loan-order" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/crypto-loan/ongoing-orders
+        /// </para>
         /// </summary>
         /// <param name="orderId">Filter by loan order id</param>
         /// <param name="loanAsset">Filter by loan asset</param>
@@ -79,7 +109,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get repayment history
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/crypto-loan/repay-transaction" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/crypto-loan/repay-transaction" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/crypto-loan/repayment-history
+        /// </para>
         /// </summary>
         /// <param name="orderId">Filter by order id</param>
         /// <param name="repayId">Filter by repayment id</param>
@@ -91,7 +126,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get completed loan orders
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/crypto-loan/comleted-loan-order" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/crypto-loan/comleted-loan-order" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/crypto-loan/borrow-history
+        /// </para>
         /// </summary>
         /// <param name="orderId">Filter by order id</param>
         /// <param name="loanAsset">Filter by loan asset</param>
@@ -103,7 +143,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get max collateral for a loan
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/crypto-loan/reduce-max-collateral-amt" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/crypto-loan/reduce-max-collateral-amt" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/crypto-loan/max-collateral-amount
+        /// </para>
         /// </summary>
         /// <param name="orderId">Order id</param>
         /// <param name="ct">Cancellation token</param>
@@ -111,7 +156,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Adjust collateral
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/crypto-loan/adjust-collateral" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/crypto-loan/adjust-collateral" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/crypto-loan/adjust-ltv
+        /// </para>
         /// </summary>
         /// <param name="orderId">Order id</param>
         /// <param name="quantity">Quantity</param>
@@ -121,7 +171,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
 
         /// <summary>
         /// Get collateral adjustment history
-        /// <para><a href="https://bybit-exchange.github.io/docs/v5/crypto-loan/ltv-adjust-history" /></para>
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/crypto-loan/ltv-adjust-history" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/crypto-loan/adjustment-history
+        /// </para>
         /// </summary>
         /// <param name="orderId">Filter by order id</param>
         /// <param name="adjustId">Filter by adjust id</param>
