@@ -22,7 +22,7 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// POST /v5/asset/withdraw/cancel
         /// </para>
         /// </summary>
-        /// <param name="id">The id of the withdrawal to cancel</param>
+        /// <param name="id">["<c>id</c>"] The id of the withdrawal to cancel</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<BybitOperationResult>> CancelWithdrawalAsync(string id, CancellationToken ct = default);
@@ -36,11 +36,11 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// POST /v5/asset/transfer/inter-transfer
         /// </para>
         /// </summary>
-        /// <param name="asset">Asset, for example `ETH`</param>
-        /// <param name="quantity">Quantity</param>
-        /// <param name="fromAccountType">From account type</param>
-        /// <param name="toAccountType">To account type</param>
-        /// <param name="transferId">Client id</param>
+        /// <param name="asset">["<c>coin</c>"] Asset, for example `ETH`</param>
+        /// <param name="quantity">["<c>amount</c>"] Quantity</param>
+        /// <param name="fromAccountType">["<c>fromAccountType</c>"] From account type</param>
+        /// <param name="toAccountType">["<c>toAccountType</c>"] To account type</param>
+        /// <param name="transferId">["<c>transferId</c>"] Client id</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<BybitTransferId>> CreateInternalTransferAsync(string asset, decimal quantity, AccountType fromAccountType, AccountType toAccountType, string? transferId = null, CancellationToken ct = default);
@@ -54,13 +54,13 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// POST /v5/asset/transfer/universal-transfer
         /// </para>
         /// </summary>
-        /// <param name="asset">The asset, for example `ETH`</param>
-        /// <param name="quantity">Quantity</param>
-        /// <param name="fromMemberId">From member id</param>
-        /// <param name="toMemberId">To member id</param>
-        /// <param name="fromAccountType">From account type</param>
-        /// <param name="toAccountType">To account type</param>
-        /// <param name="transferId">Client id</param>
+        /// <param name="asset">["<c>coin</c>"] The asset, for example `ETH`</param>
+        /// <param name="quantity">["<c>amount</c>"] Quantity</param>
+        /// <param name="fromMemberId">["<c>fromMemberId</c>"] From member id</param>
+        /// <param name="toMemberId">["<c>toMemberId</c>"] To member id</param>
+        /// <param name="fromAccountType">["<c>fromAccountType</c>"] From account type</param>
+        /// <param name="toAccountType">["<c>toAccountType</c>"] To account type</param>
+        /// <param name="transferId">["<c>transferId</c>"] Client id</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<BybitTransferId>> CreateUniversalTransferAsync(string asset, decimal quantity, string fromMemberId, string toMemberId, AccountType fromAccountType, AccountType toAccountType, string? transferId = null, CancellationToken ct = default);
@@ -87,10 +87,10 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// GET /v5/asset/transfer/query-account-coins-balance
         /// </para>
         /// </summary>
-        /// <param name="accountType">Account type</param>
-        /// <param name="memberId">Member id</param>
-        /// <param name="asset">Asset, for example `ETH`. Can be specify multiple comma separated assets. Required for Unified account.</param>
-        /// <param name="withBonus">Include bonus</param>
+        /// <param name="accountType">["<c>accountType</c>"] Account type</param>
+        /// <param name="memberId">["<c>memberId</c>"] Member id</param>
+        /// <param name="asset">["<c>coin</c>"] Asset, for example `ETH`. Can be specify multiple comma separated assets. Required for Unified account.</param>
+        /// <param name="withBonus">["<c>withBonus</c>"] Include bonus</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<BybitAllAssetBalances>> GetAllAssetBalancesAsync(AccountType accountType, string? memberId = null, string? asset = null, bool? withBonus = null, CancellationToken ct = default);
@@ -104,10 +104,10 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// GET /v5/asset/deposit/query-allowed-list
         /// </para>
         /// </summary>
-        /// <param name="asset">Filter on asset, for example `ETH`</param>
-        /// <param name="network">Filter on network</param>
-        /// <param name="limit">Number of results per page</param>
-        /// <param name="cursor">Pagination cursor</param>
+        /// <param name="asset">["<c>coin</c>"] Filter on asset, for example `ETH`</param>
+        /// <param name="network">["<c>chain</c>"] Filter on network</param>
+        /// <param name="limit">["<c>limit</c>"] Number of results per page</param>
+        /// <param name="cursor">["<c>cursor</c>"] Pagination cursor</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<BybitAllowedDepositInfoResponse>> GetAllowedDepositAssetInfoAsync(string? asset = null, string? network = null, int? limit = null, string? cursor = null, CancellationToken ct = default);
@@ -134,7 +134,7 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// POST /v5/user/update-api
         /// </para>
         /// </summary>
-        /// <param name="readOnly">Readonly</param>
+        /// <param name="readOnly">["<c>readOnly</c>"] Readonly</param>
         /// <param name="permissionContractTradeOrder">Has contract order permission</param>
         /// <param name="permissionContractTradePosition">Has contract position permission</param>
         /// <param name="permissionSpotTrade">Has spot trade permission</param>
@@ -185,7 +185,7 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// GET /v5/user/get-member-type
         /// </para>
         /// </summary>
-        /// <param name="subAccountIds">Master id can request subaccount info</param>
+        /// <param name="subAccountIds">["<c>memberIds</c>"] Master id can request subaccount info</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<BybitAccountTypeInfo[]>> GetAccountTypesAsync(IEnumerable<string>? subAccountIds = null, CancellationToken ct = default);
@@ -199,10 +199,10 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// GET /v5/asset/transfer/query-account-coin-balance
         /// </para>
         /// </summary>
-        /// <param name="accountType">Account type</param>
-        /// <param name="asset">The asset, for example `ETH`</param>
-        /// <param name="memberId">Member id</param>
-        /// <param name="withBonus">Include bonus</param>
+        /// <param name="accountType">["<c>accountType</c>"] Account type</param>
+        /// <param name="asset">["<c>coin</c>"] The asset, for example `ETH`</param>
+        /// <param name="memberId">["<c>memberId</c>"] Member id</param>
+        /// <param name="withBonus">["<c>withBonus</c>"] Include bonus</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<BybitSingleAssetBalance>> GetAssetBalanceAsync(AccountType accountType, string asset, string? memberId = null, bool? withBonus = null, CancellationToken ct = default);
@@ -216,7 +216,7 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// GET /v5/asset/coin-greeks
         /// </para>
         /// </summary>
-        /// <param name="baseAsset">Base asset, for example `ETH`</param>
+        /// <param name="baseAsset">["<c>baseCoin</c>"] Base asset, for example `ETH`</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<BybitResponse<BybitGreeks>>> GetAssetGreeksAsync(string? baseAsset = null, CancellationToken ct = default);
@@ -230,7 +230,7 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// GET /v5/asset/coin/query-info
         /// </para>
         /// </summary>
-        /// <param name="asset">Filter by asset, for example `ETH`</param>
+        /// <param name="asset">["<c>coin</c>"] Filter by asset, for example `ETH`</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<BybitUserAssetInfos>> GetAssetInfoAsync(string? asset = null, CancellationToken ct = default);
@@ -244,8 +244,8 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// GET /v5/asset/transfer/query-asset-info
         /// </para>
         /// </summary>
-        /// <param name="accountType">Account type (spot only atm)</param>
-        /// <param name="asset">Filter asset, for example `ETH`</param>
+        /// <param name="accountType">["<c>accountType</c>"] Account type (spot only atm)</param>
+        /// <param name="asset">["<c>coin</c>"] Filter asset, for example `ETH`</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<BybitAccountAssetInfo>> GetAssetInfoAsync(AccountType accountType, string? asset = null, CancellationToken ct = default);
@@ -259,8 +259,8 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// GET /v5/account/wallet-balance
         /// </para>
         /// </summary>
-        /// <param name="accountType">Account info</param>
-        /// <param name="asset">Filter by asset, for example `ETH`</param>
+        /// <param name="accountType">["<c>accountType</c>"] Account info</param>
+        /// <param name="asset">["<c>coin</c>"] Filter by asset, for example `ETH`</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<BybitResponse<BybitBalance>>> GetBalancesAsync(AccountType accountType, string? asset = null, CancellationToken ct = default);
@@ -274,11 +274,11 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// GET /v5/account/borrow-history
         /// </para>
         /// </summary>
-        /// <param name="asset">Filter by asset, for example `ETH`</param>
-        /// <param name="startTime">Filter by start time</param>
-        /// <param name="endTime">Filter by end time</param>
-        /// <param name="limit">Number of results per page</param>
-        /// <param name="cursor">Pagination cursor</param>
+        /// <param name="asset">["<c>currency</c>"] Filter by asset, for example `ETH`</param>
+        /// <param name="startTime">["<c>startTime</c>"] Filter by start time</param>
+        /// <param name="endTime">["<c>endTime</c>"] Filter by end time</param>
+        /// <param name="limit">["<c>limit</c>"] Number of results per page</param>
+        /// <param name="cursor">["<c>cursor</c>"] Pagination cursor</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<BybitResponse<BybitBorrowHistory>>> GetBorrowHistoryAsync(string? asset = null, DateTime? startTime = null, DateTime? endTime = null, int? limit = null, string? cursor = null, CancellationToken ct = default);
@@ -292,7 +292,7 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// GET /v5/account/collateral-info
         /// </para>
         /// </summary>
-        /// <param name="asset">Filter by asset, for example `ETH`</param>
+        /// <param name="asset">["<c>currency</c>"] Filter by asset, for example `ETH`</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<BybitResponse<BybitCollateralInfo>>> GetCollateralInfoAsync(string? asset = null, CancellationToken ct = default);
@@ -306,7 +306,7 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// GET /v5/asset/withdraw/withdrawable-amount
         /// </para>
         /// </summary>
-        /// <param name="asset">The asset, for example `ETH`</param>
+        /// <param name="asset">["<c>coin</c>"] The asset, for example `ETH`</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<BybitDelayedWithdrawal>> GetDelayedWithdrawQuantityAsync(string asset, CancellationToken ct = default);
@@ -320,8 +320,8 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// GET /v5/asset/deposit/query-address
         /// </para>
         /// </summary>
-        /// <param name="asset">Asset, for example `ETH`</param>
-        /// <param name="networkType">Network type</param>
+        /// <param name="asset">["<c>coin</c>"] Asset, for example `ETH`</param>
+        /// <param name="networkType">["<c>chainType</c>"] Network type</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<BybitDepositAddress>> GetDepositAddressAsync(string asset, string? networkType = null, CancellationToken ct = default);
@@ -335,13 +335,13 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// GET /v5/asset/deposit/query-record
         /// </para>
         /// </summary>
-        /// <param name="asset">Filter by asset, for example `ETH`</param>
-        /// <param name="id">Filter by id</param>
-        /// <param name="transactionId">Filter by transaction id</param>
-        /// <param name="startTime">Filter by start time</param>
-        /// <param name="endTime">Filter by end time</param>
-        /// <param name="limit">Number of results per page</param>
-        /// <param name="cursor">Pagination cursor</param>
+        /// <param name="asset">["<c>coin</c>"] Filter by asset, for example `ETH`</param>
+        /// <param name="id">["<c>id</c>"] Filter by id</param>
+        /// <param name="transactionId">["<c>txID</c>"] Filter by transaction id</param>
+        /// <param name="startTime">["<c>startTime</c>"] Filter by start time</param>
+        /// <param name="endTime">["<c>endTime</c>"] Filter by end time</param>
+        /// <param name="limit">["<c>limit</c>"] Number of results per page</param>
+        /// <param name="cursor">["<c>cursor</c>"] Pagination cursor</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<BybitDeposits>> GetDepositsAsync(string? asset = null, string? id = null, string? transactionId = null, DateTime? startTime = null, DateTime? endTime = null, int? limit = null, string? cursor = null, CancellationToken ct = default);
@@ -355,12 +355,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// GET /v5/asset/deposit/query-internal-record
         /// </para>
         /// </summary>
-        /// <param name="transactionId">Filter by transaction id</param>
-        /// <param name="asset">Filter by asset, for example `ETH`</param>
-        /// <param name="startTime">Filter by start time</param>
-        /// <param name="endTime">Filter by end time</param>
-        /// <param name="limit">Max results</param>
-        /// <param name="cursor">Next page cursor</param>
+        /// <param name="transactionId">["<c>txID</c>"] Filter by transaction id</param>
+        /// <param name="asset">["<c>coin</c>"] Filter by asset, for example `ETH`</param>
+        /// <param name="startTime">["<c>startTime</c>"] Filter by start time</param>
+        /// <param name="endTime">["<c>endTime</c>"] Filter by end time</param>
+        /// <param name="limit">["<c>limit</c>"] Max results</param>
+        /// <param name="cursor">["<c>cursor</c>"] Next page cursor</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<BybitResponse<BybitInternalDeposit>>> GetInternalDepositsAsync(
@@ -381,9 +381,9 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// GET /v5/account/fee-rate
         /// </para>
         /// </summary>
-        /// <param name="category">Category</param>
-        /// <param name="symbol">Filter by symbol, for example `ETHUSDT`</param>
-        /// <param name="baseAsset">Filter by base asset</param>
+        /// <param name="category">["<c>category</c>"] Category</param>
+        /// <param name="symbol">["<c>symbol</c>"] Filter by symbol, for example `ETHUSDT`</param>
+        /// <param name="baseAsset">["<c>baseCoin</c>"] Filter by base asset</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<BybitResponse<BybitFeeRate>>> GetFeeRateAsync(Category category, string? symbol = null, string? baseAsset = null, CancellationToken ct = default);
@@ -397,13 +397,13 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// GET /v5/asset/transfer/query-inter-transfer-list
         /// </para>
         /// </summary>
-        /// <param name="transferId">Filter by tansfer id</param>
-        /// <param name="asset">Filter by asset, for example `ETH`</param>
-        /// <param name="transferStatus">Filter by status</param>
-        /// <param name="startTime">Filter by start time</param>
-        /// <param name="endTime">Filter by end time</param>
-        /// <param name="limit">Number of results per page</param>
-        /// <param name="cursor">Pagination cursor</param>
+        /// <param name="transferId">["<c>transferId</c>"] Filter by tansfer id</param>
+        /// <param name="asset">["<c>coin</c>"] Filter by asset, for example `ETH`</param>
+        /// <param name="transferStatus">["<c>status</c>"] Filter by status</param>
+        /// <param name="startTime">["<c>startTime</c>"] Filter by start time</param>
+        /// <param name="endTime">["<c>endTime</c>"] Filter by end time</param>
+        /// <param name="limit">["<c>limit</c>"] Number of results per page</param>
+        /// <param name="cursor">["<c>cursor</c>"] Pagination cursor</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<BybitResponse<BybitTransfer>>> GetInternalTransfersAsync(string? transferId = null, string? asset = null, TransferStatus? transferStatus = null, DateTime? startTime = null, DateTime? endTime = null, int? limit = null, string? cursor = null, CancellationToken ct = default);
@@ -417,15 +417,15 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// GET /v5/account/transaction-log
         /// </para>
         /// </summary>
-        /// <param name="accountType">Filter by account type</param>
-        /// <param name="category">Filter by category</param>
-        /// <param name="asset">Filter by asset, for example `ETH`</param>
-        /// <param name="baseAsset">Filter by base asset</param>
-        /// <param name="type">Filter by type</param>
-        /// <param name="startTime">Filter by start time</param>
-        /// <param name="endTime">Filter by end time</param>
-        /// <param name="limit">Number of results per page</param>
-        /// <param name="cursor">Pagination cursor</param>
+        /// <param name="accountType">["<c>accountType</c>"] Filter by account type</param>
+        /// <param name="category">["<c>category</c>"] Filter by category</param>
+        /// <param name="asset">["<c>currency</c>"] Filter by asset, for example `ETH`</param>
+        /// <param name="baseAsset">["<c>baseCoin</c>"] Filter by base asset</param>
+        /// <param name="type">["<c>type</c>"] Filter by type</param>
+        /// <param name="startTime">["<c>startTime</c>"] Filter by start time</param>
+        /// <param name="endTime">["<c>endTime</c>"] Filter by end time</param>
+        /// <param name="limit">["<c>limit</c>"] Number of results per page</param>
+        /// <param name="cursor">["<c>cursor</c>"] Pagination cursor</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<BybitResponse<BybitTransactionLog>>> GetTransactionHistoryAsync(AccountType? accountType = null, Category? category = null, string? asset = null, string? baseAsset = null, TransactionLogType? type = null, DateTime? startTime = null, DateTime? endTime = null, int? limit = null, string? cursor = null, CancellationToken ct = default);
@@ -439,13 +439,13 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// GET /v5/account/contract-transaction-log
         /// </para>
         /// </summary>
-        /// <param name="asset">Filter by asset, for example `ETH`</param>
-        /// <param name="baseAsset">Filter by base asset</param>
-        /// <param name="type">Filter by type</param>
-        /// <param name="startTime">Filter by start time</param>
-        /// <param name="endTime">Filter by end time</param>
-        /// <param name="limit">Number of results per page</param>
-        /// <param name="cursor">Pagination cursor</param>
+        /// <param name="asset">["<c>currency</c>"] Filter by asset, for example `ETH`</param>
+        /// <param name="baseAsset">["<c>baseCoin</c>"] Filter by base asset</param>
+        /// <param name="type">["<c>type</c>"] Filter by type</param>
+        /// <param name="startTime">["<c>startTime</c>"] Filter by start time</param>
+        /// <param name="endTime">["<c>endTime</c>"] Filter by end time</param>
+        /// <param name="limit">["<c>limit</c>"] Number of results per page</param>
+        /// <param name="cursor">["<c>cursor</c>"] Pagination cursor</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<BybitResponse<BybitTransactionLog>>> GetClassicContractTransactionHistoryAsync(
@@ -467,8 +467,8 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// GET /v5/asset/transfer/query-transfer-coin-list
         /// </para>
         /// </summary>
-        /// <param name="fromAccountType">From account type</param>
-        /// <param name="toAccountType">To account type</param>
+        /// <param name="fromAccountType">["<c>fromAccountType</c>"] From account type</param>
+        /// <param name="toAccountType">["<c>toAccountType</c>"] To account type</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<BybitResponse<string>>> GetTransferableAssetsAsync(AccountType fromAccountType, AccountType toAccountType, CancellationToken ct = default);
@@ -482,13 +482,13 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// GET /v5/asset/transfer/query-universal-transfer-list
         /// </para>
         /// </summary>
-        /// <param name="transferId">Filter by tansfer id</param>
-        /// <param name="asset">Filter by asset, for example `ETH`</param>
-        /// <param name="transferStatus">Filter by status</param>
-        /// <param name="startTime">Filter by start time</param>
-        /// <param name="endTime">Filter by end time</param>
-        /// <param name="limit">Number of results per page</param>
-        /// <param name="cursor">Pagination cursor</param>
+        /// <param name="transferId">["<c>transferId</c>"] Filter by tansfer id</param>
+        /// <param name="asset">["<c>coin</c>"] Filter by asset, for example `ETH`</param>
+        /// <param name="transferStatus">["<c>status</c>"] Filter by status</param>
+        /// <param name="startTime">["<c>startTime</c>"] Filter by start time</param>
+        /// <param name="endTime">["<c>endTime</c>"] Filter by end time</param>
+        /// <param name="limit">["<c>limit</c>"] Number of results per page</param>
+        /// <param name="cursor">["<c>cursor</c>"] Pagination cursor</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<BybitResponse<BybitTransfer>>> GetUniversalTransfersAsync(string? transferId = null, string? asset = null, TransferStatus? transferStatus = null, DateTime? startTime = null, DateTime? endTime = null, int? limit = null, string? cursor = null, CancellationToken ct = default);
@@ -502,14 +502,14 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// GET /v5/asset/withdraw/query-record
         /// </para>
         /// </summary>
-        /// <param name="withdrawId">Filter by withdrawal id</param>
-        /// <param name="asset">Filter by asset, for example `ETH`</param>
-        /// <param name="type">Filter by type</param>
-        /// <param name="startTime">Filter by start time</param>
-        /// <param name="endTime">Filter by end time</param>
-        /// <param name="limit">Number of results per page</param>
-        /// <param name="cursor">Pagination cursor</param>
-        /// <param name="transactionId">Transaction hash ID</param>
+        /// <param name="withdrawId">["<c>withdrawID</c>"] Filter by withdrawal id</param>
+        /// <param name="asset">["<c>coin</c>"] Filter by asset, for example `ETH`</param>
+        /// <param name="type">["<c>withdrawType</c>"] Filter by type</param>
+        /// <param name="startTime">["<c>startTime</c>"] Filter by start time</param>
+        /// <param name="endTime">["<c>endTime</c>"] Filter by end time</param>
+        /// <param name="limit">["<c>limit</c>"] Number of results per page</param>
+        /// <param name="cursor">["<c>cursor</c>"] Pagination cursor</param>
+        /// <param name="transactionId">["<c>txID</c>"] Transaction hash ID</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<BybitResponse<BybitWithdrawal>>> GetWithdrawalsAsync(string? withdrawId = null, string? asset = null, WithdrawalType? type = null, DateTime? startTime = null, DateTime? endTime = null, int? limit = null, string? cursor = null, string? transactionId = null, CancellationToken ct = default);
@@ -523,10 +523,10 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// POST /v5/position/set-auto-add-margin
         /// </para>
         /// </summary>
-        /// <param name="category">Category</param>
-        /// <param name="symbol">Symbol, for example `ETHUSDT`</param>
-        /// <param name="autoAddMargin">Auto add margin or not</param>
-        /// <param name="positionIdx">Position idx</param>
+        /// <param name="category">["<c>category</c>"] Category</param>
+        /// <param name="symbol">["<c>symbol</c>"] Symbol, for example `ETHUSDT`</param>
+        /// <param name="autoAddMargin">["<c>autoAddMargin</c>"] Auto add margin or not</param>
+        /// <param name="positionIdx">["<c>positionIdx</c>"] Position idx</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult> SetAutoAddMarginAsync(Category category, string symbol, bool autoAddMargin, PositionIdx? positionIdx = null, CancellationToken ct = default);
@@ -540,7 +540,7 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// POST /v5/asset/deposit/deposit-to-account
         /// </para>
         /// </summary>
-        /// <param name="accountType">The account</param>
+        /// <param name="accountType">["<c>accountType</c>"] The account</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<BybitOperationResult>> SetDepositAccountAsync(AccountType accountType, CancellationToken ct = default);
@@ -554,10 +554,10 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// POST /v5/position/set-leverage
         /// </para>
         /// </summary>
-        /// <param name="category">Category</param>
-        /// <param name="symbol">Symbol, for example `ETHUSDT`</param>
-        /// <param name="buyLeverage">Buy leverage. Must be the same as sellLeverage under one-way mode</param>
-        /// <param name="sellLeverage">Sell leverage. Must be the same as sellLeverage under one-way mode</param>
+        /// <param name="category">["<c>category</c>"] Category</param>
+        /// <param name="symbol">["<c>symbol</c>"] Symbol, for example `ETHUSDT`</param>
+        /// <param name="buyLeverage">["<c>buyLeverage</c>"] Buy leverage. Must be the same as sellLeverage under one-way mode</param>
+        /// <param name="sellLeverage">["<c>sellLeverage</c>"] Sell leverage. Must be the same as sellLeverage under one-way mode</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult> SetLeverageAsync(Category category, string symbol, decimal buyLeverage, decimal sellLeverage, CancellationToken ct = default);
@@ -571,8 +571,8 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// POST /v5/account/set-collateral-switch
         /// </para>
         /// </summary>
-        /// <param name="asset">The asset. USDT and USDC can't be switched off</param>
-        /// <param name="useForCollateral">Use the asset for collateral</param>
+        /// <param name="asset">["<c>coin</c>"] The asset. USDT and USDC can't be switched off</param>
+        /// <param name="useForCollateral">["<c>collateralSwitch</c>"] Use the asset for collateral</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult> SetCollateralAssetAsync(
@@ -589,7 +589,7 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// POST /v5/account/set-collateral-switch-batch
         /// </para>
         /// </summary>
-        /// <param name="assets">The assets configuration</param>
+        /// <param name="assets">["<c>request</c>"] The assets configuration</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult> SetMultipleCollateralAssetsAsync(
@@ -605,7 +605,7 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// POST /v5/account/set-margin-mode
         /// </para>
         /// </summary>
-        /// <param name="marginMode">Margin mode</param>
+        /// <param name="marginMode">["<c>setMarginMode</c>"] Margin mode</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<BybitSetMarginModeResult>> SetMarginModeAsync(MarginMode marginMode, CancellationToken ct = default);
@@ -620,10 +620,10 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// POST /v5/position/set-risk-limit
         /// </para>
         /// </summary>
-        /// <param name="category">Category</param>
-        /// <param name="symbol">Symbol, for example `ETHUSDT`</param>
-        /// <param name="riskId">Risk id</param>
-        /// <param name="positionIdx">Position idx</param>
+        /// <param name="category">["<c>category</c>"] Category</param>
+        /// <param name="symbol">["<c>symbol</c>"] Symbol, for example `ETHUSDT`</param>
+        /// <param name="riskId">["<c>riskId</c>"] Risk id</param>
+        /// <param name="positionIdx">["<c>positionIdx</c>"] Position idx</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<BybitSetRiskLimit>> SetRiskLimitAsync(Category category, string symbol, int riskId, PositionIdx? positionIdx = null, CancellationToken ct = default);
@@ -637,9 +637,9 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// POST /v5/position/set-tpsl-mode
         /// </para>
         /// </summary>
-        /// <param name="category">Category</param>
-        /// <param name="symbol">Symbol, for example `ETHUSDT`</param>
-        /// <param name="tpSlMode">Mode</param>
+        /// <param name="category">["<c>category</c>"] Category</param>
+        /// <param name="symbol">["<c>symbol</c>"] Symbol, for example `ETHUSDT`</param>
+        /// <param name="tpSlMode">["<c>tpSlMode</c>"] Mode</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<BybitTakeProfitStopLossMode>> SetTakeProfitStopLossModeAsync(Category category, string symbol, StopLossTakeProfitMode tpSlMode, CancellationToken ct = default);
@@ -653,11 +653,11 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// POST /v5/position/switch-isolated
         /// </para>
         /// </summary>
-        /// <param name="category">Category</param>
-        /// <param name="symbol">Symbol, for example `ETHUSDT`</param>
-        /// <param name="tradeMode">Trade mode</param>
-        /// <param name="buyLeverage">Buy leverage</param>
-        /// <param name="sellLeverage">Sell leverage</param>
+        /// <param name="category">["<c>category</c>"] Category</param>
+        /// <param name="symbol">["<c>symbol</c>"] Symbol, for example `ETHUSDT`</param>
+        /// <param name="tradeMode">["<c>tradeMode</c>"] Trade mode</param>
+        /// <param name="buyLeverage">["<c>buyLeverage</c>"] Buy leverage</param>
+        /// <param name="sellLeverage">["<c>sellLeverage</c>"] Sell leverage</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult> SwitchCrossIsolatedMarginAsync(Category category, string symbol, TradeMode tradeMode, decimal buyLeverage, decimal sellLeverage, CancellationToken ct = default);
@@ -671,10 +671,10 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// POST /v5/position/switch-mode
         /// </para>
         /// </summary>
-        /// <param name="category">Category</param>
-        /// <param name="mode">Mode</param>
-        /// <param name="symbol">Symbol, for example `ETHUSDT`</param>
-        /// <param name="asset">Asset</param>
+        /// <param name="category">["<c>category</c>"] Category</param>
+        /// <param name="mode">["<c>mode</c>"] Mode</param>
+        /// <param name="symbol">["<c>symbol</c>"] Symbol, for example `ETHUSDT`</param>
+        /// <param name="asset">["<c>coin</c>"] Asset</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult> SwitchPositionModeAsync(Category category, PositionMode mode, string? symbol = null, string? asset = null, CancellationToken ct = default);
@@ -688,14 +688,14 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// POST /v5/asset/withdraw/create
         /// </para>
         /// </summary>
-        /// <param name="asset">Asset, for example `ETH`</param>
-        /// <param name="network">Network to use</param>
-        /// <param name="toAddress">Target address</param>
-        /// <param name="quantity">Quantity</param>
-        /// <param name="tag">Tag</param>
-        /// <param name="forceNetwork">Force on-chain withdrawal</param>
-        /// <param name="accountType">Account type to withdraw from</param>
-        /// <param name="feeType">Handling fee option</param>
+        /// <param name="asset">["<c>coin</c>"] Asset, for example `ETH`</param>
+        /// <param name="network">["<c>chain</c>"] Network to use</param>
+        /// <param name="toAddress">["<c>address</c>"] Target address</param>
+        /// <param name="quantity">["<c>amount</c>"] Quantity</param>
+        /// <param name="tag">["<c>tag</c>"] Tag</param>
+        /// <param name="forceNetwork">["<c>forceChain</c>"] Force on-chain withdrawal</param>
+        /// <param name="accountType">["<c>accountType</c>"] Account type to withdraw from</param>
+        /// <param name="feeType">["<c>feeType</c>"] Handling fee option</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<BybitId>> WithdrawAsync(string asset, string network, string toAddress, decimal quantity, WithdrawAccountType accountType, string? tag = null, bool? forceNetwork = null, bool? feeType = null, CancellationToken ct = default);
@@ -709,10 +709,10 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// POST /v5/position/add-margin
         /// </para>
         /// </summary>
-        /// <param name="category">Category</param>
-        /// <param name="symbol">Symbol, for example `ETHUSDT`</param>
-        /// <param name="margin">Margin. Positive for adding, negative for reducing</param>
-        /// <param name="positionIdx">Position idx</param>
+        /// <param name="category">["<c>category</c>"] Category</param>
+        /// <param name="symbol">["<c>symbol</c>"] Symbol, for example `ETHUSDT`</param>
+        /// <param name="margin">["<c>margin</c>"] Margin. Positive for adding, negative for reducing</param>
+        /// <param name="positionIdx">["<c>positionIdx</c>"] Position idx</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<BybitPosition>> AddOrReduceMarginAsync(
@@ -731,8 +731,8 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// POST /v5/spot-margin-trade/set-leverage
         /// </para>
         /// </summary>
-        /// <param name="leverage">New leverage</param>
-        /// <param name="asset">Asset name</param>
+        /// <param name="leverage">["<c>leverage</c>"] New leverage</param>
+        /// <param name="asset">["<c>currency</c>"] Asset name</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult> SetSpotMarginLeverageAsync(decimal leverage, string? asset = null, CancellationToken ct = default);
@@ -759,7 +759,7 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// POST /v5/spot-margin-trade/switch-mode
         /// </para>
         /// </summary>
-        /// <param name="spotMarginMode">True to enable, false to disable</param>
+        /// <param name="spotMarginMode">["<c>spotMarginMode</c>"] True to enable, false to disable</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<BybitSpotMarginStatus>> SetSpotMarginTradeModeAsync(bool spotMarginMode, CancellationToken ct = default);
@@ -773,8 +773,8 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// GET /v5/spot-margin-trade/data
         /// </para>
         /// </summary>
-        /// <param name="asset">Filter by asset, for example `ETH`</param>
-        /// <param name="vipLevel">Filter by VIP level</param>
+        /// <param name="asset">["<c>currency</c>"] Filter by asset, for example `ETH`</param>
+        /// <param name="vipLevel">["<c>vipLevel</c>"] Filter by VIP level</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<BybitSpotMarginVipMarginList[]>> GetSpotMarginDataAsync(string? asset = null, string? vipLevel = null, CancellationToken ct = default);
@@ -788,10 +788,10 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// GET /v5/spot-margin-trade/interest-rate-history
         /// </para>
         /// </summary>
-        /// <param name="asset">The asset, for example `ETH`</param>
-        /// <param name="vipLevel">VIP level. If not set uses the account VIP level</param>
-        /// <param name="startTime">Filter by start time</param>
-        /// <param name="endTime">Filter by end time</param>
+        /// <param name="asset">["<c>currency</c>"] The asset, for example `ETH`</param>
+        /// <param name="vipLevel">["<c>vipLevel</c>"] VIP level. If not set uses the account VIP level</param>
+        /// <param name="startTime">["<c>startTime</c>"] Filter by start time</param>
+        /// <param name="endTime">["<c>endTime</c>"] Filter by end time</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<BybitSpotMarginBorrowRate[]>> GetSpotMarginInterestRateHistoryAsync(string asset, string? vipLevel = null, DateTime? startTime = null, DateTime? endTime = null, CancellationToken ct = default);
@@ -805,12 +805,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// GET /v5/broker/earnings-info
         /// </para>
         /// </summary>
-        /// <param name="bizType">Filter by bizType</param>
-        /// <param name="startTime">Filter by start time</param>
-        /// <param name="endTime">Filter by end time</param>
-        /// <param name="subAccountId">Filter by sub account id</param>
-        /// <param name="limit">Max number of results</param>
-        /// <param name="cursor">Next page cursor</param>
+        /// <param name="bizType">["<c>bizType</c>"] Filter by bizType</param>
+        /// <param name="startTime">["<c>begin</c>"] Filter by start time</param>
+        /// <param name="endTime">["<c>end</c>"] Filter by end time</param>
+        /// <param name="subAccountId">["<c>uid</c>"] Filter by sub account id</param>
+        /// <param name="limit">["<c>limit</c>"] Max number of results</param>
+        /// <param name="cursor">["<c>cursor</c>"] Next page cursor</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<BybitBrokerEarnings>> GetBrokerEarningsAsync(string? bizType = null, DateTime? startTime = null, DateTime? endTime = null, string? subAccountId = null, int? limit = null, string? cursor = null, CancellationToken ct = default);
@@ -837,7 +837,7 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// POST /v5/account/set-hedging-mode
         /// </para>
         /// </summary>
-        /// <param name="spotHedgingMode">Hedging mode on or not</param>
+        /// <param name="spotHedgingMode">["<c>setHedgingMode</c>"] Hedging mode on or not</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult> SetSpotHedgingModeAsync(bool spotHedgingMode, CancellationToken ct = default);
@@ -851,7 +851,7 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// POST /v5/account/quick-repayment
         /// </para>
         /// </summary>
-        /// <param name="asset">Only repay this asset; if null repay all assets</param>
+        /// <param name="asset">["<c>coin</c>"] Only repay this asset; if null repay all assets</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<BybitLiabilityRepayment[]>> RepayLiabilitiesAsync(string? asset = null, CancellationToken ct = default);
@@ -865,8 +865,8 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// POST /v5/account/demo-apply-money
         /// </para>
         /// </summary>
-        /// <param name="funds">Dictionary of the asset and amount you want to receive. Only BTC, ETH, USDT or USDC supported</param>
-        /// <param name="addOrReduce">Whether to add(true, default) or reduce (false) the funds with the amounts</param>
+        /// <param name="funds">["<c>utaDemoApplyMoney</c>"] Dictionary of the asset and amount you want to receive. Only BTC, ETH, USDT or USDC supported</param>
+        /// <param name="addOrReduce">["<c>adjustType</c>"] Whether to add(true, default) or reduce (false) the funds with the amounts</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult> RequestDemoFundsAsync(Dictionary<string, decimal> funds, bool? addOrReduce = null, CancellationToken ct = default);
@@ -880,9 +880,9 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// GET /v5/asset/exchange/query-coin-list
         /// </para>
         /// </summary>
-        /// <param name="accountType">Account type</param>
-        /// <param name="asset">Filter by asset, for example `USDT`</param>
-        /// <param name="side">Request side, from or to list</param>
+        /// <param name="accountType">["<c>accountType</c>"] Account type</param>
+        /// <param name="asset">["<c>coin</c>"] Filter by asset, for example `USDT`</param>
+        /// <param name="side">["<c>side</c>"] Request side, from or to list</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<BybitConvertAsset[]>> GetConvertAssetsAsync(ConvertAccountType accountType, string? asset = null, ConvertAssetSide? side = null, CancellationToken ct = default);
@@ -896,11 +896,11 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// POST /v5/asset/exchange/quote-apply
         /// </para>
         /// </summary>
-        /// <param name="accountType">Account type</param>
+        /// <param name="accountType">["<c>accountType</c>"] Account type</param>
         /// <param name="fromAsset">From asset (selling)</param>
-        /// <param name="toAsset">To asset (buying)</param>
-        /// <param name="quantity">Quantity to sell</param>
-        /// <param name="clientOrderId">Request id</param>
+        /// <param name="toAsset">["<c>toCoin</c>"] To asset (buying)</param>
+        /// <param name="quantity">["<c>requestAmount</c>"] Quantity to sell</param>
+        /// <param name="clientOrderId">["<c>requestId</c>"] Request id</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<BybitConvertQuote>> GetConvertQuoteAsync(ConvertAccountType accountType, string fromAsset, string toAsset, decimal quantity, string? clientOrderId = null, CancellationToken ct = default);
@@ -914,7 +914,7 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// POST /v5/asset/exchange/convert-execute
         /// </para>
         /// </summary>
-        /// <param name="quoteTransactionId">The quote transaction id to confirm</param>
+        /// <param name="quoteTransactionId">["<c>quoteTxId</c>"] The quote transaction id to confirm</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<BybitConvertTransactionResult>> ConvertConfirmQuoteAsync(string quoteTransactionId, CancellationToken ct = default);
@@ -928,8 +928,8 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// GET /v5/asset/exchange/convert-result-query
         /// </para>
         /// </summary>
-        /// <param name="accountType">Account type</param>
-        /// <param name="quoteTransactionId">Transaction id</param>
+        /// <param name="accountType">["<c>accountType</c>"] Account type</param>
+        /// <param name="quoteTransactionId">["<c>quoteTxId</c>"] Transaction id</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<BybitConvertTransaction>> GetConvertStatusAsync(ConvertAccountType accountType, string quoteTransactionId, CancellationToken ct = default);
@@ -943,9 +943,9 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// GET /v5/asset/exchange/query-convert-history
         /// </para>
         /// </summary>
-        /// <param name="accountType">Filter by account type</param>
-        /// <param name="page">Page</param>
-        /// <param name="pageSize">Page size</param>
+        /// <param name="accountType">["<c>accountType</c>"] Filter by account type</param>
+        /// <param name="page">["<c>index</c>"] Page</param>
+        /// <param name="pageSize">["<c>limit</c>"] Page size</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<BybitConvertTransaction[]>> GetConvertHistoryAsync(ConvertAccountType? accountType = null, int? page = null, int? pageSize = null, CancellationToken ct = default);
@@ -973,7 +973,7 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// GET /v5/account/withdrawal
         /// </para>
         /// </summary>
-        /// <param name="assets">Asset names, can request up to 20 assets</param>
+        /// <param name="assets">["<c>coinName</c>"] Asset names, can request up to 20 assets</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
         Task<WebCallResult<BybitTransferable>> GetTransferableAsync(IEnumerable<string> assets, CancellationToken ct = default);
@@ -987,8 +987,8 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// POST /v5/account/set-limit-px-action
         /// </para>
         /// </summary>
-        /// <param name="category">Category</param>
-        /// <param name="allowModifyPrice">True: allow the system to adjust the price to nearest allowed, False: fail the order</param>
+        /// <param name="category">["<c>category</c>"] Category</param>
+        /// <param name="allowModifyPrice">["<c>modifyEnable</c>"] True: allow the system to adjust the price to nearest allowed, False: fail the order</param>
         /// <param name="ct">Cancellation token</param>
         Task<WebCallResult> SetPriceLimitBehaviorAsync(Category category, bool allowModifyPrice, CancellationToken ct = default);
 
@@ -1001,9 +1001,9 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// GET /v5/account/instruments-info
         /// </para>
         /// </summary>
-        /// <param name="symbol">Filter by symbol</param>
-        /// <param name="limit">Number of results, max 200</param>
-        /// <param name="cursor">Pagination cursor</param>
+        /// <param name="symbol">["<c>symbol</c>"] Filter by symbol</param>
+        /// <param name="limit">["<c>limit</c>"] Number of results, max 200</param>
+        /// <param name="cursor">["<c>cursor</c>"] Pagination cursor</param>
         /// <param name="ct">Cancellation token</param>
         Task<WebCallResult<BybitResponse<BybitSpotSymbol>>> GetSpotSymbolsAsync(string? symbol = null, int? limit = null, string? cursor = null, CancellationToken ct = default);
 
@@ -1016,10 +1016,10 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// GET /v5/account/instruments-info
         /// </para>
         /// </summary>
-        /// <param name="category">Category, either linear or inverse</param>
+        /// <param name="category">["<c>category</c>"] Category, either linear or inverse</param>
         /// <param name="symbol">Filter by symbol</param>
-        /// <param name="limit">Number of results, max 200</param>
-        /// <param name="cursor">Pagination cursor</param>
+        /// <param name="limit">["<c>limit</c>"] Number of results, max 200</param>
+        /// <param name="cursor">["<c>cursor</c>"] Pagination cursor</param>
         /// <param name="ct">Cancellation token</param>
         Task<WebCallResult<BybitResponse<BybitLinearInverseSymbol>>> GetLinearInverseSymbolsAsync(
             Category category,
@@ -1037,11 +1037,11 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// GET /v5/asset/withdraw/query-address
         /// </para>
         /// </summary>
-        /// <param name="asset">Filter by asset</param>
-        /// <param name="network">Filter by network</param>
-        /// <param name="addressType">Filter by network type</param>
-        /// <param name="limit">Number of results, max 50</param>
-        /// <param name="cursor">Pagination cursor</param>
+        /// <param name="asset">["<c>coin</c>"] Filter by asset</param>
+        /// <param name="network">["<c>chain</c>"] Filter by network</param>
+        /// <param name="addressType">["<c>addressType</c>"] Filter by network type</param>
+        /// <param name="limit">["<c>limit</c>"] Number of results, max 50</param>
+        /// <param name="cursor">["<c>cursor</c>"] Pagination cursor</param>
         /// <param name="ct">Cancellation token</param>
         Task<WebCallResult<BybitResponse<BybitWithdrawAddress>>> GetWithdrawAddressListAsync(
             string? asset = null,
@@ -1060,8 +1060,8 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// GET /v5/asset/covert/small-balance-list
         /// </para>
         /// </summary>
-        /// <param name="accountType">Account type</param>
-        /// <param name="fromAsset">From asset filter</param>
+        /// <param name="accountType">["<c>accountType</c>"] Account type</param>
+        /// <param name="fromAsset">["<c>fromCoin</c>"] From asset filter</param>
         /// <param name="ct">Cancellation token</param>
         Task<WebCallResult<BybitSmallBalanceAssets>> GetSmallBalanceAssetsAsync(
             ConvertAccountType accountType,
@@ -1077,9 +1077,9 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// POST /v5/asset/covert/get-quote
         /// </para>
         /// </summary>
-        /// <param name="accountType">Account type</param>
-        /// <param name="fromAssets">Assets to convert</param>
-        /// <param name="toAsset">Output asset</param>
+        /// <param name="accountType">["<c>accountType</c>"] Account type</param>
+        /// <param name="fromAssets">["<c>fromCoinList</c>"] Assets to convert</param>
+        /// <param name="toAsset">["<c>toCoin</c>"] Output asset</param>
         /// <param name="ct">Cancellation token</param>
         Task<WebCallResult<BybitSmallBalancesQuote>> GetSmallBalancesQuoteAsync(
             ConvertAccountType accountType,
@@ -1096,7 +1096,7 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// POST /v5/asset/covert/small-balance-execute
         /// </para>
         /// </summary>
-        /// <param name="quoteId">Quote id</param>
+        /// <param name="quoteId">["<c>quoteId</c>"] Quote id</param>
         /// <param name="ct">Cancellation token</param>
         Task<WebCallResult<BybitSmallBalancesQuoteResult>> ConfirmSmallBalancesQuoteAsync(
             string quoteId,
@@ -1111,12 +1111,12 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// GET /v5/asset/covert/small-balance-history
         /// </para>
         /// </summary>
-        /// <param name="accountType">Filter by account</param>
-        /// <param name="quoteId">Filter by quote id</param>
-        /// <param name="startTime">Filter by start time</param>
-        /// <param name="endTime">Filter by end time</param>
-        /// <param name="page">Page number</param>
-        /// <param name="pageSize">Page size</param>
+        /// <param name="accountType">["<c>accountType</c>"] Filter by account</param>
+        /// <param name="quoteId">["<c>quoteId</c>"] Filter by quote id</param>
+        /// <param name="startTime">["<c>startTime</c>"] Filter by start time</param>
+        /// <param name="endTime">["<c>endTime</c>"] Filter by end time</param>
+        /// <param name="page">["<c>cursor</c>"] Page number</param>
+        /// <param name="pageSize">["<c>size</c>"] Page size</param>
         /// <param name="ct">Cancellation token</param>
         Task<WebCallResult<BybitPage<BybitSmallBalancesExchangeItem>>> GetSmallBalancesExchangeHistoryAsync(
             ConvertAccountType? accountType = null,
@@ -1136,8 +1136,8 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// POST /v5/spot-margin-trade/set-auto-repay-mode
         /// </para>
         /// </summary>
-        /// <param name="asset">Asset. If not provided set for all assets</param>
-        /// <param name="enabled">Enable or not</param>
+        /// <param name="asset">["<c>currency</c>"] Asset. If not provided set for all assets</param>
+        /// <param name="enabled">["<c>autoRepayMode</c>"] Enable or not</param>
         /// <param name="ct">Cancellation token</param>
         Task<WebCallResult<BybitSpotMarginAutoRepayMode[]>> SetSpotMarginAutoRepayModeAsync(bool enabled, string? asset = null, CancellationToken ct = default);
 
@@ -1150,7 +1150,7 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// GET /v5/spot-margin-trade/get-auto-repay-mode
         /// </para>
         /// </summary>
-        /// <param name="asset">Asset. If not provided get mode for all assets</param>
+        /// <param name="asset">["<c>currency</c>"] Asset. If not provided get mode for all assets</param>
         /// <param name="ct">Cancellation token</param>
         Task<WebCallResult<BybitSpotMarginAutoRepayMode[]>> GetSpotMarginAutoRepayModeAsync(string? asset = null, CancellationToken ct = default);
     }
