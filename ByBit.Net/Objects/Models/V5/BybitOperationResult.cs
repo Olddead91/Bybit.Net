@@ -9,7 +9,7 @@ namespace Bybit.Net.Objects.Models.V5
     public record BybitOperationResult
     {
         /// <summary>
-        /// Success
+        /// ["<c>status</c>"] Success
         /// </summary>
         [JsonPropertyName("status")]
         [JsonConverter(typeof(BoolConverter))]

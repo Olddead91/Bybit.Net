@@ -15,12 +15,12 @@ namespace Bybit.Net.Objects.Models.V5
     public record BybitSpotMarginAutoRepayMode
     {
         /// <summary>
-        /// The asset
+        /// ["<c>currency</c>"] The asset
         /// </summary>
         [JsonPropertyName("currency")]
         public string Asset { get; set; } = string.Empty;
         /// <summary>
-        /// Auto repay mode enabled
+        /// ["<c>autoRepayMode</c>"] Auto repay mode enabled
         /// </summary>
         [JsonPropertyName("autoRepayMode")]
         public bool AutoRepayModeEnabled { get; set; }

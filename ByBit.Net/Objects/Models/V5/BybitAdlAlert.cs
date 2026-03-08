@@ -1,4 +1,4 @@
-﻿using System.Text.Json.Serialization;
+using System.Text.Json.Serialization;
 
 namespace Bybit.Net.Objects.Models.V5
 {
@@ -8,7 +8,7 @@ namespace Bybit.Net.Objects.Models.V5
     public record BybitAdlAlert
     {
         /// <summary>
-        /// Asset of the insurance pool
+        /// ["<c>coin</c>"] Asset of the insurance pool
         /// </summary>
         [JsonPropertyName("coin")]
         public string Asset { get; set; } = string.Empty;
@@ -16,7 +16,7 @@ namespace Bybit.Net.Objects.Models.V5
         internal string WSAsset { set => Asset = value; }
 
         /// <summary>
-        /// Symbol name
+        /// ["<c>symbol</c>"] Symbol name
         /// </summary>
         [JsonPropertyName("symbol")]
         public string Symbol { get; set; } = string.Empty;
@@ -24,7 +24,7 @@ namespace Bybit.Net.Objects.Models.V5
         internal string WSSymbol { set => Symbol = value; }
 
         /// <summary>
-        /// Insurance fund balance
+        /// ["<c>balance</c>"] Insurance fund balance
         /// </summary>
         [JsonPropertyName("balance")]
         public decimal Balance { get; set; }
@@ -32,7 +32,7 @@ namespace Bybit.Net.Objects.Models.V5
         internal decimal WSBalance { set => Balance = value; }
 
         /// <summary>
-        /// PnL ratio threshold for triggering contract PnL drawdown ADL
+        /// ["<c>insurancePnlRatio</c>"] PnL ratio threshold for triggering contract PnL drawdown ADL
         /// </summary>
         [JsonPropertyName("insurancePnlRatio")]
         public decimal InsuranceThresholdPnlRatio { get; set; }
@@ -40,7 +40,7 @@ namespace Bybit.Net.Objects.Models.V5
         internal decimal WSInsuranceThresholdPnlRatio { set => InsuranceThresholdPnlRatio = value; }
 
         /// <summary>
-        /// Symbol's PnL drawdown ratio in the last 8 hours. Used to determine whether ADL is triggered or stopped
+        /// ["<c>pnlRatio</c>"] Symbol's PnL drawdown ratio in the last 8 hours. Used to determine whether ADL is triggered or stopped
         /// </summary>
         [JsonPropertyName("pnlRatio")]
         public decimal PnlRatio { get; set; }
@@ -48,7 +48,7 @@ namespace Bybit.Net.Objects.Models.V5
         internal decimal WSPnlRatio { set => PnlRatio = value; }
 
         /// <summary>
-        /// Trigger threshold for contract PnL drawdown ADL
+        /// ["<c>adlTriggerThreshold</c>"] Trigger threshold for contract PnL drawdown ADL
         /// </summary>
         [JsonPropertyName("adlTriggerThreshold")]
         public decimal AdlTriggerThreshold { get; set; }
@@ -56,7 +56,7 @@ namespace Bybit.Net.Objects.Models.V5
         internal decimal WSAdlTriggerThreshold { set => AdlTriggerThreshold = value; }
 
         /// <summary>
-        /// Stop ratio threshold for contract PnL drawdown ADL
+        /// ["<c>adlStopRatio</c>"] Stop ratio threshold for contract PnL drawdown ADL
         /// </summary>
         [JsonPropertyName("adlStopRatio")]
         public decimal AdlStopThreshold { get; set; }

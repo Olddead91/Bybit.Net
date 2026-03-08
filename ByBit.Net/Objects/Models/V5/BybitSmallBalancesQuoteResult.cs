@@ -1,4 +1,4 @@
-﻿using Bybit.Net.Converters;
+using Bybit.Net.Converters;
 using Bybit.Net.Enums;
 using System;
 using System.Collections.Generic;
@@ -15,27 +15,27 @@ namespace Bybit.Net.Objects.Models.V5
     public record BybitSmallBalancesQuoteResult
     {
         /// <summary>
-        /// Quote id
+        /// ["<c>quoteId</c>"] Quote id
         /// </summary>
         [JsonPropertyName("quoteId")]
         public string QuoteId { get; set; } = string.Empty;
         /// <summary>
-        /// Exchange transaction id
+        /// ["<c>exchangeTxId</c>"] Exchange transaction id
         /// </summary>
         [JsonPropertyName("exchangeTxId")]
         public string ExchangeTransactionId { get; set; } = string.Empty;
         /// <summary>
-        /// Quote id
+        /// ["<c>submitTime</c>"] Quote id
         /// </summary>
         [JsonPropertyName("submitTime")]
         public DateTime SubmitTime { get; set; }
         /// <summary>
-        /// Status
+        /// ["<c>exchangeTxId</c>"] Status
         /// </summary>
         [JsonPropertyName("exchangeTxId")]
         public SmallBalanceConvertStatus Status { get; set; }
         /// <summary>
-        /// Message
+        /// ["<c>msg</c>"] Message
         /// </summary>
         [JsonPropertyName("msg")]
         public string Message { get; set; } = string.Empty;

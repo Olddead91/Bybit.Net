@@ -17,12 +17,12 @@ namespace Bybit.Net.Objects.Models.V5
     public record BybitAccountAssetInfo
     {
         /// <summary>
-        /// Account status
+        /// ["<c>status</c>"] Account status
         /// </summary>
         [JsonPropertyName("status")]
         public string Status { get; set; } = string.Empty;
         /// <summary>
-        /// Assdet info
+        /// ["<c>assets</c>"] Assdet info
         /// </summary>
         [JsonPropertyName("assets")]
         public BybitAssetInfo[] Assets { get; set; } = Array.Empty<BybitAssetInfo>();
@@ -35,22 +35,22 @@ namespace Bybit.Net.Objects.Models.V5
     public record BybitAssetInfo
     {
         /// <summary>
-        /// Asset name
+        /// ["<c>coin</c>"] Asset name
         /// </summary>
         [JsonPropertyName("coin")]
         public string Asset { get; set; } = string.Empty;
         /// <summary>
-        /// Frozen amount
+        /// ["<c>frozen</c>"] Frozen amount
         /// </summary>
         [JsonPropertyName("frozen")]
         public decimal Frozen { get; set; }
         /// <summary>
-        /// Free amount
+        /// ["<c>free</c>"] Free amount
         /// </summary>
         [JsonPropertyName("free")]
         public decimal Free { get; set; }
         /// <summary>
-        /// Amount in withdrawing
+        /// ["<c>withdraw</c>"] Amount in withdrawing
         /// </summary>
         [JsonPropertyName("withdraw")]
         public decimal? Withdrawing { get; set; }

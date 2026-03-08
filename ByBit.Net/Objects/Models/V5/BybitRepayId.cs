@@ -9,7 +9,7 @@ namespace Bybit.Net.Objects.Models.V5
     public record BybitRepayId
     {
         /// <summary>
-        /// Repay id
+        /// ["<c>repayId</c>"] Repay id
         /// </summary>
         [JsonPropertyName("repayId")]
         public string RepayId { get; set; } = string.Empty;

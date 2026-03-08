@@ -10,17 +10,17 @@ namespace Bybit.Net.Objects.Models.V5
     public record BybitPlaceOrderRequest
     {
         /// <summary>
-        /// The symbol
+        /// ["<c>symbol</c>"] The symbol
         /// </summary>
         [JsonPropertyName("symbol")]
         public string Symbol { get; set; } = string.Empty;
         /// <summary>
-        /// Type of order
+        /// ["<c>orderType</c>"] Type of order
         /// </summary>
         [JsonPropertyName("orderType")]
         public NewOrderType OrderType { get; set; }
         /// <summary>
-        /// Side of the order
+        /// ["<c>side</c>"] Side of the order
         /// </summary>
         [JsonPropertyName("side")]
         public OrderSide Side { get; set; }

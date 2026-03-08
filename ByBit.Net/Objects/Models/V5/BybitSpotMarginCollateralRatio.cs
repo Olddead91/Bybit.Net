@@ -9,12 +9,12 @@ namespace Bybit.Net.Objects.Models.V5
     public record BybitSpotMarginCollateralRatio
     {
         /// <summary>
-        /// Asset
+        /// ["<c>currency</c>"] Asset
         /// </summary>
         [JsonPropertyName("currency")]
         public string Asset { get; set; } = string.Empty;
         /// <summary>
-        /// Collateral ratios
+        /// ["<c>collateralRatioList</c>"] Collateral ratios
         /// </summary>
         [JsonPropertyName("collateralRatioList")]
         public BybitSpotMarginCollateralRatioTier[] CollateralRatios { get; set; } = [];
@@ -27,17 +27,17 @@ namespace Bybit.Net.Objects.Models.V5
     public record BybitSpotMarginCollateralRatioTier
     {
         /// <summary>
-        /// Lower limit of the tiered range
+        /// ["<c>minQty</c>"] Lower limit of the tiered range
         /// </summary>
         [JsonPropertyName("minQty")]
         public decimal MinQuantity { get; set; }
         /// <summary>
-        /// Upper limit of the tiered range, null means positive infinity
+        /// ["<c>maxQty</c>"] Upper limit of the tiered range, null means positive infinity
         /// </summary>
         [JsonPropertyName("maxQty")]
         public decimal? MaxQuantity { get; set; }
         /// <summary>
-        /// Collateral ratio
+        /// ["<c>collateralRatio</c>"] Collateral ratio
         /// </summary>
         [JsonPropertyName("collateralRatio")]
         public decimal CollateralRatio { get; set; }

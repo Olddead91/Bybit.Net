@@ -9,12 +9,12 @@ namespace Bybit.Net.Objects.Models.V5
     public record BybitLiabilityRepayment
     {
         /// <summary>
-        /// Asset name
+        /// ["<c>coin</c>"] Asset name
         /// </summary>
         [JsonPropertyName("coin")]
         public string Asset { get; set; } = string.Empty;
         /// <summary>
-        /// Repayment quantity
+        /// ["<c>repaymentQty</c>"] Repayment quantity
         /// </summary>
         [JsonPropertyName("repaymentQty")]
         public decimal RepaymentQuantity { get; set; }

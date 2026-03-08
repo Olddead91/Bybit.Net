@@ -1,4 +1,4 @@
-﻿using Bybit.Net.Converters;
+using Bybit.Net.Converters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,12 +14,12 @@ namespace Bybit.Net.Objects.Models.V5
     public record BybitSmallBalancesQuote
     {
         /// <summary>
-        /// Quote id
+        /// ["<c>quoteId</c>"] Quote id
         /// </summary>
         [JsonPropertyName("quoteId")]
         public string QuoteId { get; set; } = string.Empty;
         /// <summary>
-        /// Quote info
+        /// ["<c>result</c>"] Quote info
         /// </summary>
         [JsonPropertyName("result")]
         public BybitSmallBalancesQuoteInfo Result { get; set; } = null!;
@@ -31,27 +31,27 @@ namespace Bybit.Net.Objects.Models.V5
     public record BybitSmallBalancesQuoteInfo
     {
         /// <summary>
-        /// Create time
+        /// ["<c>quoteCreateTime</c>"] Create time
         /// </summary>
         [JsonPropertyName("quoteCreateTime")]
         public DateTime QuoteCreateTime { get; set; }
         /// <summary>
-        /// Expire time
+        /// ["<c>quoteExpireTime</c>"] Expire time
         /// </summary>
         [JsonPropertyName("quoteExpireTime")]
         public DateTime QuoteExpireTime { get; set; }
         /// <summary>
-        /// Exchange assets
+        /// ["<c>exchangeCoins</c>"] Exchange assets
         /// </summary>
         [JsonPropertyName("exchangeCoins")]
         public BybitSmallBalancesQuoteAsset[] ExchangeAssets { get; set; } = [];
         /// <summary>
-        /// Fee info
+        /// ["<c>totalFeeInfo</c>"] Fee info
         /// </summary>
         [JsonPropertyName("totalFeeInfo")]
         public BybitSmallBalancesQuoteFee TotalFee { get; set; } = null!;
         /// <summary>
-        /// Tax fee info
+        /// ["<c>totalTaxFeeInfo</c>"] Tax fee info
         /// </summary>
         [JsonPropertyName("totalTaxFeeInfo")]
         public BybitSmallBalancesQuoteTaxFee TotalTaxFee { get; set; } = null!;
@@ -63,17 +63,17 @@ namespace Bybit.Net.Objects.Models.V5
     public record BybitSmallBalancesQuoteFee
     {
         /// <summary>
-        /// Fee asset
+        /// ["<c>feeCoin</c>"] Fee asset
         /// </summary>
         [JsonPropertyName("feeCoin")]
         public string FeeAsset { get; set; } = string.Empty;
         /// <summary>
-        /// Quantity
+        /// ["<c>amount</c>"] Quantity
         /// </summary>
         [JsonPropertyName("amount")]
         public decimal Quantity { get; set; }
         /// <summary>
-        /// Fee rate
+        /// ["<c>feeRate</c>"] Fee rate
         /// </summary>
         [JsonPropertyName("feeRate")]
         public decimal FeeRate { get; set; }
@@ -85,12 +85,12 @@ namespace Bybit.Net.Objects.Models.V5
     public record BybitSmallBalancesQuoteTaxFee
     {
         /// <summary>
-        /// Total quantity
+        /// ["<c>totalAmount</c>"] Total quantity
         /// </summary>
         [JsonPropertyName("totalAmount")]
         public decimal TotalQuantity { get; set; }
         /// <summary>
-        /// Fee asset
+        /// ["<c>feeCoin</c>"] Fee asset
         /// </summary>
         [JsonPropertyName("feeCoin")]
         public string FeeAsset { get; set; } = string.Empty;
@@ -102,48 +102,48 @@ namespace Bybit.Net.Objects.Models.V5
     public record BybitSmallBalancesQuoteAsset
     {
         /// <summary>
-        /// From asset
+        /// ["<c>fromCoin</c>"] From asset
         /// </summary>
         [JsonPropertyName("fromCoin")]
         public string FromAsset { get; set; } = string.Empty;
         /// <summary>
-        /// To asset
+        /// ["<c>toCoin</c>"] To asset
         /// </summary>
         [JsonPropertyName("toCoin")]
         public string ToAsset { get; set; } = string.Empty;
         /// <summary>
-        /// Available balance
+        /// ["<c>availableBalance</c>"] Available balance
         /// </summary>
         [JsonPropertyName("availableBalance")]
         public decimal AvailableBalance { get; set; }
         /// <summary>
-        /// USDT value
+        /// ["<c>baseValue</c>"] USDT value
         /// </summary>
         [JsonPropertyName("baseValue")]
         public decimal BaseValue { get; set; }
         /// <summary>
-        /// Conversion is supported
+        /// ["<c>supportConvert</c>"] Conversion is supported
         /// </summary>
         [JsonConverter(typeof(Bool12Converter))]
         [JsonPropertyName("supportConvert")]
         public bool Supported { get; set; }
         /// <summary>
-        /// Output quantity
+        /// ["<c>toAmount</c>"] Output quantity
         /// </summary>
         [JsonPropertyName("toAmount")]
         public decimal ToQuantity { get; set; }
         /// <summary>
-        /// Exchange rate
+        /// ["<c>exchangeRate</c>"] Exchange rate
         /// </summary>
         [JsonPropertyName("exchangeRate")]
         public decimal ExchangeRate { get; set; }
         /// <summary>
-        /// Fee info
+        /// ["<c>feeInfo</c>"] Fee info
         /// </summary>
         [JsonPropertyName("feeInfo")]
         public BybitSmallBalancesQuoteFee Fee { get; set; } = null!;
         /// <summary>
-        /// Tax fee info
+        /// ["<c>taxFeeInfo</c>"] Tax fee info
         /// </summary>
         [JsonPropertyName("taxFeeInfo")]
         public BybitSmallBalancesQuoteTaxFee TaxFee { get; set; } = null!;

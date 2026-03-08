@@ -18,7 +18,7 @@ namespace Bybit.Net.Objects.Models.V5
     public record BybitDcpStatus
     {
         /// <summary>
-        /// Product types
+        /// ["<c>product</c>"] Product types
         /// </summary>
         [JsonPropertyName("product")]
         public ProductType Product { get; set; }
@@ -28,7 +28,7 @@ namespace Bybit.Net.Objects.Models.V5
         [JsonPropertyName("dcpStatus"), JsonConverter(typeof(BoolConverter))]
         public bool Activated { get; set; }
         /// <summary>
-        /// Timewindow in seconds
+        /// ["<c>timeWindow</c>"] Timewindow in seconds
         /// </summary>
         [JsonPropertyName("timeWindow")]
         public int? TimeWindow { get; set; }

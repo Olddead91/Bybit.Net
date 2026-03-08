@@ -10,13 +10,13 @@ namespace Bybit.Net.Objects.Models.V5
     public record BybitTime
     {
         /// <summary>
-        /// Seconds timestamp
+        /// ["<c>timeSecond</c>"] Seconds timestamp
         /// </summary>
         [JsonConverter(typeof(DateTimeConverter))]
         [JsonPropertyName("timeSecond")]
         public DateTime TimeSecond { get; set; }
         /// <summary>
-        /// Nano seconds timestamp
+        /// ["<c>timeNano</c>"] Nano seconds timestamp
         /// </summary>
         [JsonConverter(typeof(DateTimeConverter))]
         [JsonPropertyName("timeNano")]

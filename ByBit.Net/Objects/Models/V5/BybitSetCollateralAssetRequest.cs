@@ -9,7 +9,7 @@ namespace Bybit.Net.Objects.Models.V5
     public record BybitSetCollateralAssetRequest
     {
         /// <summary>
-        /// The asset
+        /// ["<c>coin</c>"] The asset
         /// </summary>
         [JsonPropertyName("coin")]
         public string Asset { get; set; } = string.Empty;

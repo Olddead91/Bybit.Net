@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,27 +13,27 @@ namespace Bybit.Net.Objects.Models.V5
     public record BybitPage<T>
     {
         /// <summary>
-        /// Current page
+        /// ["<c>cursor</c>"] Current page
         /// </summary>
         [JsonPropertyName("cursor")]
         public int Page { get; set; }
         /// <summary>
-        /// Page size
+        /// ["<c>size</c>"] Page size
         /// </summary>
         [JsonPropertyName("size")]
         public int PageSize { get; set; }
         /// <summary>
-        /// Last page
+        /// ["<c>lastPage</c>"] Last page
         /// </summary>
         [JsonPropertyName("lastPage")]
         public int LastPage { get; set; }
         /// <summary>
-        /// Total count
+        /// ["<c>totalCount</c>"] Total count
         /// </summary>
         [JsonPropertyName("totalCount")]
         public int Total { get; set; }
         /// <summary>
-        /// Page records
+        /// ["<c>records</c>"] Page records
         /// </summary>
         [JsonPropertyName("records")]
         public T[] Records { get; set; } = [];

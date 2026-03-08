@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Text.Json.Serialization;
 
 namespace Bybit.Net.Objects.Models.V5
@@ -9,22 +9,22 @@ namespace Bybit.Net.Objects.Models.V5
     public record BybitOrderPriceLimit
     {
         /// <summary>
-        /// Symbol name
+        /// ["<c>symbol</c>"] Symbol name
         /// </summary>
         [JsonPropertyName("symbol")]
         public string Symbol { get; set; } = string.Empty;
         /// <summary>
-        /// Highest bid price
+        /// ["<c>buyLmt</c>"] Highest bid price
         /// </summary>
         [JsonPropertyName("buyLmt")]
         public decimal BuyLimit { get; set; }
         /// <summary>
-        /// Lowest ask price
+        /// ["<c>sellLmt</c>"] Lowest ask price
         /// </summary>
         [JsonPropertyName("sellLmt")]
         public decimal SellLimit { get; set; }
         /// <summary>
-        /// Timestamp
+        /// ["<c>ts</c>"] Timestamp
         /// </summary>
         [JsonPropertyName("ts")]
         public DateTime Timestamp { get; set; }

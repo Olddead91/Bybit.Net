@@ -10,12 +10,12 @@ namespace Bybit.Net.Objects.Models.V5
     public record BybitOpenInterest
     {
         /// <summary>
-        /// Open interest
+        /// ["<c>openInterest</c>"] Open interest
         /// </summary>
         [JsonPropertyName("openInterest")]
         public decimal OpenInterest { get; set; }
         /// <summary>
-        /// Timestamp
+        /// ["<c>timestamp</c>"] Timestamp
         /// </summary>
         [JsonConverter(typeof(DateTimeConverter))]
         [JsonPropertyName("timestamp")]

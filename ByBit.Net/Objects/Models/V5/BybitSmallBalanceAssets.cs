@@ -1,4 +1,4 @@
-﻿using Bybit.Net.Converters;
+using Bybit.Net.Converters;
 using System.Text.Json.Serialization;
 
 namespace Bybit.Net.Objects.Models.V5
@@ -9,12 +9,12 @@ namespace Bybit.Net.Objects.Models.V5
     public record BybitSmallBalanceAssets
     {
         /// <summary>
-        /// Small balances
+        /// ["<c>smallAssetCoins</c>"] Small balances
         /// </summary>
         [JsonPropertyName("smallAssetCoins")]
         public BybitSmallBalanceAsset[] SmallBalanceAssets { get; set; } = [];
         /// <summary>
-        /// Supported to assets
+        /// ["<c>supportToCoins</c>"] Supported to assets
         /// </summary>
         [JsonPropertyName("supportToCoins")]
         public string[] SupportToAssets { get; set; } = [];
@@ -26,22 +26,22 @@ namespace Bybit.Net.Objects.Models.V5
     public record BybitSmallBalanceAsset
     {
         /// <summary>
-        /// From asset
+        /// ["<c>fromCoin</c>"] From asset
         /// </summary>
         [JsonPropertyName("fromCoin")]
         public string FromAsset { get; set; } = string.Empty;
         /// <summary>
-        /// Available balance
+        /// ["<c>availableBalance</c>"] Available balance
         /// </summary>
         [JsonPropertyName("availableBalance")]
         public decimal AvailableBalance { get; set; }
         /// <summary>
-        /// USDT value
+        /// ["<c>baseValue</c>"] USDT value
         /// </summary>
         [JsonPropertyName("baseValue")]
         public decimal BaseValue { get; set; }
         /// <summary>
-        /// Conversion is supported
+        /// ["<c>supportConvert</c>"] Conversion is supported
         /// </summary>
         [JsonConverter(typeof(Bool12Converter))]
         [JsonPropertyName("supportConvert")]

@@ -10,13 +10,13 @@ namespace Bybit.Net.Objects.Models.V5
     public record BybitUserTradeUpdate : BybitUserTrade
     {
         /// <summary>
-        /// Profit and Loss for a position execution
+        /// ["<c>execPnl</c>"] Profit and Loss for a position execution
         /// </summary>
         [JsonPropertyName("execPnl")]
         public decimal? Pnl { get; set; }
 
         /// <summary>
-        /// Category
+        /// ["<c>category</c>"] Category
         /// </summary>
         [JsonPropertyName("category")]
         public Category Category { get; set; }

@@ -10,32 +10,32 @@ namespace Bybit.Net.Objects.Models.V5
     public record BybitSpreadTrade
     {
         /// <summary>
-        /// Trade id
+        /// ["<c>execId</c>"] Trade id
         /// </summary>
         [JsonPropertyName("execId")]
         public string TradeId { get; set; } = string.Empty;
         /// <summary>
-        /// Symbol
+        /// ["<c>symbol</c>"] Symbol
         /// </summary>
         [JsonPropertyName("symbol")]
         public string Symbol { get; set; } = string.Empty;
         /// <summary>
-        /// Price
+        /// ["<c>price</c>"] Price
         /// </summary>
         [JsonPropertyName("price")]
         public decimal Price { get; set; }
         /// <summary>
-        /// Quantity
+        /// ["<c>size</c>"] Quantity
         /// </summary>
         [JsonPropertyName("size")]
         public decimal Quantity { get; set; }
         /// <summary>
-        /// Side
+        /// ["<c>side</c>"] Side
         /// </summary>
         [JsonPropertyName("side")]
         public OrderSide Side { get; set; }
         /// <summary>
-        /// Trade time
+        /// ["<c>time</c>"] Trade time
         /// </summary>
         [JsonPropertyName("time")]
         public DateTime TradeTime { get; set; }

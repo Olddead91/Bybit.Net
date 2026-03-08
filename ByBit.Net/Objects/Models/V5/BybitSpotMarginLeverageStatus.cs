@@ -9,7 +9,7 @@ namespace Bybit.Net.Objects.Models.V5
     public record BybitSpotMarginLeverageStatus
     {
         /// <summary>
-        /// The leverage
+        /// ["<c>spotLeverage</c>"] The leverage
         /// </summary>
         [JsonPropertyName("spotLeverage")]
         public decimal? Leverage { get; set; }
@@ -19,7 +19,7 @@ namespace Bybit.Net.Objects.Models.V5
         [JsonPropertyName("spotMarginMode"), JsonConverter(typeof(BoolConverter))]
         public bool SpotMarginMode { get; set; }
         /// <summary>
-        /// Actual leverage ratio
+        /// ["<c>effectiveLeverage</c>"] Actual leverage ratio
         /// </summary>
         [JsonPropertyName("effectiveLeverage")]
         public decimal? EffectiveLeverage { get; set; }

@@ -11,27 +11,27 @@ namespace Bybit.Net.Objects.Models.V5
     public record BybitRpiOrderbook
     {
         /// <summary>
-        /// Symbol
+        /// ["<c>s</c>"] Symbol
         /// </summary>
         [JsonPropertyName("s")]
         public string Symbol { get; set; } = string.Empty;
         /// <summary>
-        /// Bids
+        /// ["<c>b</c>"] Bids
         /// </summary>
         [JsonPropertyName("b")]
         public BybitRpiOrderbookEntry[] Bids { get; set; } = Array.Empty<BybitRpiOrderbookEntry>();
         /// <summary>
-        /// Asks
+        /// ["<c>a</c>"] Asks
         /// </summary>
         [JsonPropertyName("a")]
         public BybitRpiOrderbookEntry[] Asks { get; set; } = Array.Empty<BybitRpiOrderbookEntry>();
         /// <summary>
-        /// Update id
+        /// ["<c>u</c>"] Update id
         /// </summary>
         [JsonPropertyName("u")]
         public long UpdateId { get; set; }
         /// <summary>
-        /// Cross sequence
+        /// ["<c>seq</c>"] Cross sequence
         /// </summary>
         [JsonPropertyName("seq")]
         public long? Sequence { get; set; }
