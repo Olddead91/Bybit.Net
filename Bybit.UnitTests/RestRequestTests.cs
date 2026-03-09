@@ -73,6 +73,8 @@ namespace Bybit.Net.UnitTests
             await tester.ValidateAsync(client => client.V5Api.Account.SetSpotMarginAutoRepayModeAsync(true), "SetSpotMarginAutoRepayMode", nestedJsonProperty: "result.data");
             await tester.ValidateAsync(client => client.V5Api.Account.GetSpotMarginAutoRepayModeAsync(), "GetSpotMarginAutoRepayMode", nestedJsonProperty: "result.data");
             await tester.ValidateAsync(client => client.V5Api.Account.SignAgreementAsync(AgreementCategory.Metals, true), "SignAgreement");
+            await tester.ValidateAsync(client => client.V5Api.Account.GetFundingTransactionHistoryAsync(), "GetFundingTransactionHistory", nestedJsonProperty: "result.list");
+            await tester.ValidateAsync(client => client.V5Api.Account.GetAssetOverviewAsync(), "GetAssetOverview", nestedJsonProperty: "result");
         }
 
         [Test]

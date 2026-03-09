@@ -1168,5 +1168,34 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// <param name="ct">Cancellation token</param>
         Task<WebCallResult> SignAgreementAsync(AgreementCategory category, bool agree, CancellationToken ct = default);
 
+        /// <summary>
+        /// Get transfer history for the funding account
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/asset/fund-history" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/asset/fundinghistory<br />
+        /// </para>
+        /// </summary>
+        /// <param name="startTime">["<c>createTimeFrom</c>"] Filter by start time</param>
+        /// <param name="endTime">["<c>createTimeTo</c>"] Filter by end time</param>
+        /// <param name="limit">["<c>limit</c>"] Max number of results, max 100</param>
+        /// <param name="cursor">["<c>cursor</c>"] Pagination cursor</param>
+        /// <param name="ct">Cancellation token</param>
+        Task<WebCallResult<BybitResponse<BybitFundingTransfer>>> GetFundingTransactionHistoryAsync(DateTime? startTime = null, DateTime? endTime = null, int? limit = null, string? cursor = null, CancellationToken ct = default);
+
+        /// <summary>
+        /// Get asset overview
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/asset/balance/asset-overview" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/asset/asset-overview<br />
+        /// </para>
+        /// </summary>
+        /// <param name="memberId">["<c>memberId</c>"] User ID. When using master API key to query sub account assets, this field is required</param>
+        /// <param name="ct">Cancellation token</param>
+        Task<WebCallResult<BybitAccountOverview>> GetAssetOverviewAsync(string? memberId = null, CancellationToken ct = default);   
+
     }
 }

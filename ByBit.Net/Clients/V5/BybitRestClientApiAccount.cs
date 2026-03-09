@@ -1465,5 +1465,36 @@ namespace Bybit.Net.Clients.V5
 
         #endregion
 
+        #region Get Funding Transaction History
+
+        /// <inheritdoc />
+        public async Task<WebCallResult<BybitResponse<BybitFundingTransfer>>> GetFundingTransactionHistoryAsync(DateTime? startTime = null, DateTime? endTime = null, int? limit = null, string? cursor = null, CancellationToken ct = default)
+        {
+            var parameters = new ParameterCollection();
+            parameters.AddOptionalMillisecondsString("createTimeFrom", startTime);
+            parameters.AddOptionalMillisecondsString("createTimeTo", endTime);
+            parameters.AddOptional("limit", limit);
+            parameters.AddOptional("cursor", cursor);
+            var request = _definitions.GetOrCreate(HttpMethod.Get, "/v5/asset/fundinghistory", BybitExchange.RateLimiter.BybitRest, 1, true);
+            var result = await _baseClient.SendAsync<BybitResponse<BybitFundingTransfer>>(request, parameters, ct).ConfigureAwait(false);
+            return result;
+        }
+
+        #endregion
+
+        #region Get Asset Overview
+
+        /// <inheritdoc />
+        public async Task<WebCallResult<BybitAccountOverview>> GetAssetOverviewAsync(string? memberId = null, CancellationToken ct = default)
+        {
+            var parameters = new ParameterCollection();
+            parameters.AddOptional("memberId", memberId);
+            var request = _definitions.GetOrCreate(HttpMethod.Get, "/v5/asset/asset-overview", BybitExchange.RateLimiter.BybitRest, 1, true);
+            var result = await _baseClient.SendAsync<BybitAccountOverview>(request, parameters, ct).ConfigureAwait(false);
+            return result;
+        }
+
+        #endregion
+
     }
 }
