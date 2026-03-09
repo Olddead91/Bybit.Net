@@ -1449,5 +1449,21 @@ namespace Bybit.Net.Clients.V5
         }
 
         #endregion
+
+        #region Sign Agreement
+
+        /// <inheritdoc />
+        public async Task<WebCallResult> SignAgreementAsync(AgreementCategory category, bool agree, CancellationToken ct = default)
+        {
+            var parameters = new ParameterCollection();
+            parameters.AddEnumAsInt("category", category);
+            parameters.AddBoolString("agree", agree);
+            var request = _definitions.GetOrCreate(HttpMethod.Post, "/v5/user/agreement", BybitExchange.RateLimiter.BybitRest, 1, true);
+            var result = await _baseClient.SendAsync(request, parameters, ct).ConfigureAwait(false);
+            return result;
+        }
+
+        #endregion
+
     }
 }

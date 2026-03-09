@@ -1153,5 +1153,20 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// <param name="asset">["<c>currency</c>"] Asset. If not provided get mode for all assets</param>
         /// <param name="ct">Cancellation token</param>
         Task<WebCallResult<BybitSpotMarginAutoRepayMode[]>> GetSpotMarginAutoRepayModeAsync(string? asset = null, CancellationToken ct = default);
+
+        /// <summary>
+        /// Sign a trading agreement, required before trading certain products or using certain features
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/user/sign-agreement" /><br />
+        /// Endpoint:<br />
+        /// POST /v5/user/agreement<br />
+        /// </para>
+        /// </summary>
+        /// <param name="category">["<c>category</c>"] The category to sign</param>
+        /// <param name="agree">["<c>agree</c>"] Agree</param>
+        /// <param name="ct">Cancellation token</param>
+        Task<WebCallResult> SignAgreementAsync(AgreementCategory category, bool agree, CancellationToken ct = default);
+
     }
 }
