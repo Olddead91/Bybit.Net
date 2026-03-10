@@ -10,17 +10,17 @@ namespace Bybit.Net.Enums
     public enum SubAccountStatus
     {
         /// <summary>
-        /// Normal
+        /// ["<c>1</c>"] Normal
         /// </summary>
         [Map("1")]
         Normal,
         /// <summary>
-        /// Login banned
+        /// ["<c>2</c>"] Login banned
         /// </summary>
         [Map("2")]
         LoginBanned,
         /// <summary>
-        /// Frozen
+        /// ["<c>4</c>"] Frozen
         /// </summary>
         [Map("4")]
         Frozen

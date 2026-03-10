@@ -10,12 +10,12 @@ namespace Bybit.Net.Enums
     public enum PositionMode
     {
         /// <summary>
-        /// Merge single
+        /// ["<c>0</c>"] Merge single
         /// </summary>
         [Map("0")]
         MergedSingle,
         /// <summary>
-        /// Both sides
+        /// ["<c>3</c>"] Both sides
         /// </summary>
         [Map("3")]
         BothSides

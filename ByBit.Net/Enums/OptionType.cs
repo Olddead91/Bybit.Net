@@ -10,12 +10,12 @@ namespace Bybit.Net.Enums
     public enum OptionType
     {
         /// <summary>
-        /// Call
+        /// ["<c>Call</c>"] Call
         /// </summary>
         [Map("Call")]
         Call,
         /// <summary>
-        /// Put
+        /// ["<c>Put</c>"] Put
         /// </summary>
         [Map("Put")]
         Put

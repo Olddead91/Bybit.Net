@@ -10,22 +10,22 @@ namespace Bybit.Net.Enums
     public enum PositionStatus
     {
         /// <summary>
-        /// Normal
+        /// ["<c>Normal</c>"] Normal
         /// </summary>
         [Map("Normal")]
         Normal,
         /// <summary>
-        /// Liquidation
+        /// ["<c>Liq</c>"] Liquidation
         /// </summary>
         [Map("Liq")]
         Liquidation,
         /// <summary>
-        /// Auto deleverage
+        /// ["<c>Adl</c>"] Auto deleverage
         /// </summary>
         [Map("Adl")]
         AutoDeleverage,
         /// <summary>
-        /// Inactive
+        /// ["<c>Inactive</c>"] Inactive
         /// </summary>
         [Map("Inactive")]
         Inactive

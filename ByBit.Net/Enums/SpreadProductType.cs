@@ -10,12 +10,12 @@ namespace Bybit.Net.Enums
     public enum SpreadProductType
     {
         /// <summary>
-        /// Futures
+        /// ["<c>FUTURES</c>"] Futures
         /// </summary>
         [Map("FUTURES")]
         Futures,
         /// <summary>
-        /// Spot
+        /// ["<c>SPOT</c>"] Spot
         /// </summary>
         [Map("SPOT")]
         Spot

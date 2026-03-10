@@ -10,12 +10,12 @@ namespace Bybit.Net.Enums
     public enum EarnOrderType
     {
         /// <summary>
-        /// Stake
+        /// ["<c>Stake</c>"] Stake
         /// </summary>
         [Map("Stake")]
         Stake,
         /// <summary>
-        /// Redeem
+        /// ["<c>Redeem</c>"] Redeem
         /// </summary>
         [Map("Redeem")]
         Redeem

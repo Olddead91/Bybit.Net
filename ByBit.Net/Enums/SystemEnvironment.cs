@@ -10,12 +10,12 @@ namespace Bybit.Net.Enums
     public enum SystemEnvironment
     {
         /// <summary>
-        /// Production
+        /// ["<c>1</c>"] Production
         /// </summary>
         [Map("1")]
         Production,
         /// <summary>
-        /// Production demo services
+        /// ["<c>2</c>"] Production demo services
         /// </summary>
         [Map("2")]
         DemoServices

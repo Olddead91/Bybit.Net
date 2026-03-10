@@ -10,17 +10,17 @@ namespace Bybit.Net.Enums
     public enum KycLevel
     {
         /// <summary>
-        /// Default level
+        /// ["<c>LEVEL_DEFAULT</c>"] Default level
         /// </summary>
         [Map("LEVEL_DEFAULT")]
         Default,
         /// <summary>
-        /// Level 1
+        /// ["<c>LEVEL_1</c>"] Level 1
         /// </summary>
         [Map("LEVEL_1")]
         Level1,
         /// <summary>
-        /// Level 2
+        /// ["<c>LEVEL_2</c>"] Level 2
         /// </summary>
         [Map("LEVEL_2")]
         Level2

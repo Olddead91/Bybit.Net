@@ -10,27 +10,27 @@ namespace Bybit.Net.Enums
     public enum DepositStatus
     {
         /// <summary>
-        /// Unknown
+        /// ["<c>0</c>"] Unknown
         /// </summary>
         [Map("0")]
         Unknown,
         /// <summary>
-        /// Awaiting confirmations
+        /// ["<c>1</c>"] Awaiting confirmations
         /// </summary>
         [Map("1")]
         ToBeConfirmed,
         /// <summary>
-        /// Processing
+        /// ["<c>2</c>"] Processing
         /// </summary>
         [Map("2")]
         Processing,
         /// <summary>
-        /// Success
+        /// ["<c>3</c>"] Success
         /// </summary>
         [Map("3")]
         Success,
         /// <summary>
-        /// Failed
+        /// ["<c>4</c>"] Failed
         /// </summary>
         [Map("4")]
         DepositFailed

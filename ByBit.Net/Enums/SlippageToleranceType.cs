@@ -10,17 +10,17 @@ namespace Bybit.Net.Enums
     public enum SlippageToleranceType
     {
         /// <summary>
-        /// Tick size, the best price at the moment + (slippageTolerance * tickSize)
+        /// ["<c>TickSize</c>"] Tick size, the best price at the moment + (slippageTolerance * tickSize)
         /// </summary>
         [Map("TickSize")]
         TickSize,
         /// <summary>
-        /// Percentage
+        /// ["<c>Percent</c>"] Percentage
         /// </summary>
         [Map("Percent")]
         Percentage,
         /// <summary>
-        /// Unknown
+        /// ["<c>UNKNOWN</c>"] Unknown
         /// </summary>
         [Map("UNKNOWN")]
         Unknown

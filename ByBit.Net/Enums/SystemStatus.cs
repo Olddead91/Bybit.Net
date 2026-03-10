@@ -10,22 +10,22 @@ namespace Bybit.Net.Enums
     public enum SystemStatus
     {
         /// <summary>
-        /// Scheduled
+        /// ["<c>scheduled</c>"] Scheduled
         /// </summary>
         [Map("scheduled")]
         Scheduled,
         /// <summary>
-        /// Ongoing
+        /// ["<c>ongoing</c>"] Ongoing
         /// </summary>
         [Map("ongoing")]
         Ongoing,
         /// <summary>
-        /// Completed
+        /// ["<c>completed</c>"] Completed
         /// </summary>
         [Map("completed")]
         Completed,
         /// <summary>
-        /// Canceled
+        /// ["<c>canceled</c>"] Canceled
         /// </summary>
         [Map("canceled")]
         Canceled

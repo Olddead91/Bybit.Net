@@ -10,12 +10,12 @@ namespace Bybit.Net.Enums
     public enum LoanType
     {
         /// <summary>
-        /// Fixed term
+        /// ["<c>1</c>"] Fixed term
         /// </summary>
         [Map("1")]
         FixedTerm,
         /// <summary>
-        /// Flexible term
+        /// ["<c>2</c>"] Flexible term
         /// </summary>
         [Map("2")]
         FlexibleTerm

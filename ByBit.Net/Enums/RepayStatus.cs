@@ -10,12 +10,12 @@ namespace Bybit.Net.Enums
     public enum RepayStatus
     {
         /// <summary>
-        /// Success
+        /// ["<c>1</c>"] Success
         /// </summary>
         [Map("1")]
         Success,
         /// <summary>
-        /// Processing
+        /// ["<c>2</c>"] Processing
         /// </summary>
         [Map("2")]
         Processing

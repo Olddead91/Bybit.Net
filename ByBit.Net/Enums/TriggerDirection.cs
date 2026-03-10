@@ -10,18 +10,18 @@ namespace Bybit.Net.Enums
     public enum TriggerDirection
     {
         /// <summary>
-        /// No trigger direction
+        /// ["<c>0</c>"] No trigger direction
         /// </summary>
         [Map("0")]
         None,
 
         /// <summary>
-        /// Market price rises to triggerPrice
+        /// ["<c>1</c>"] Market price rises to triggerPrice
         /// </summary>
         [Map("1")]
         Rise = 1,
         /// <summary>
-        /// Market price falls to triggerPrice
+        /// ["<c>2</c>"] Market price falls to triggerPrice
         /// </summary>
         [Map("2")]
         Fall = 2

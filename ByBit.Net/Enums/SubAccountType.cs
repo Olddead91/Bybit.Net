@@ -10,12 +10,12 @@ namespace Bybit.Net.Enums
     public enum SubAccountType
     {
         /// <summary>
-        /// Normal account
+        /// ["<c>1</c>"] Normal account
         /// </summary>
         [Map("1")]
         NormalAccount,
         /// <summary>
-        /// Custodial account
+        /// ["<c>6</c>"] Custodial account
         /// </summary>
         [Map("6")]
         CustodialAccount

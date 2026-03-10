@@ -10,12 +10,12 @@ namespace Bybit.Net.Enums
     public enum EarnCategory
     {
         /// <summary>
-        /// Flexible saving
+        /// ["<c>FlexibleSaving</c>"] Flexible saving
         /// </summary>
         [Map("FlexibleSaving")]
         FlexibleSaving,
         /// <summary>
-        /// On chain
+        /// ["<c>OnChain</c>"] On chain
         /// </summary>
         [Map("OnChain")]
         OnChain

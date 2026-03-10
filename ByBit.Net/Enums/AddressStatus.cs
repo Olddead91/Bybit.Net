@@ -10,12 +10,12 @@ namespace Bybit.Net.Enums
     public enum AddressStatus
     {
         /// <summary>
-        /// Normal
+        /// ["<c>0</c>"] Normal
         /// </summary>
         [Map("0")]
         Normal,
         /// <summary>
-        /// New Addresses are prohibited from withdrawing coins for 24 Hours
+        /// ["<c>1</c>"] New Addresses are prohibited from withdrawing coins for 24 Hours
         /// </summary>
         [Map("1")]
         Pending

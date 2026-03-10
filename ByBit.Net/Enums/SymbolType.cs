@@ -10,22 +10,22 @@ namespace Bybit.Net.Enums
     public enum SymbolType
     {
         /// <summary>
-        /// Innovation
+        /// ["<c>innovation</c>"] Innovation
         /// </summary>
         [Map("innovation")]
         Innovation,
         /// <summary>
-        /// Adventure
+        /// ["<c>adventure</c>"] Adventure
         /// </summary>
         [Map("adventure")]
         Adventure,
         /// <summary>
-        /// X Stocks
+        /// ["<c>xstocks</c>"] X Stocks
         /// </summary>
         [Map("xstocks")]
         XStocks,
         /// <summary>
-        /// Commodity
+        /// ["<c>commodity</c>"] Commodity
         /// </summary>
         [Map("commodity")]
         Commodity,

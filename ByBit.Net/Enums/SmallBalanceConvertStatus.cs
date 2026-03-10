@@ -10,27 +10,27 @@ namespace Bybit.Net.Enums
     public enum SmallBalanceConvertStatus
     {
         /// <summary>
-        /// Initial
+        /// ["<c>init</c>"] Initial
         /// </summary>
         [Map("init")]
         Init,
         /// <summary>
-        /// Processing
+        /// ["<c>processing</c>"] Processing
         /// </summary>
         [Map("processing")]
         Processing,
         /// <summary>
-        /// Success
+        /// ["<c>success</c>"] Success
         /// </summary>
         [Map("success")]
         Success,
         /// <summary>
-        /// Failure
+        /// ["<c>failure</c>"] Failure
         /// </summary>
         [Map("failure")]
         Failure,
         /// <summary>
-        /// Partially filled
+        /// ["<c>partial_fulfillment</c>"] Partially filled
         /// </summary>
         [Map("partial_fulfillment")]
         PartiallyFilled

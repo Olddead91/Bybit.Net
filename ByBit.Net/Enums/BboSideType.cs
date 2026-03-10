@@ -10,12 +10,12 @@ namespace Bybit.Net.Enums
     public enum BboSideType
     {
         /// <summary>
-        /// Use the order price on the orderbook in the same direction as the side
+        /// ["<c>Queue</c>"] Use the order price on the orderbook in the same direction as the side
         /// </summary>
         [Map("Queue")]
         Queue,
         /// <summary>
-        /// Use the order price on the orderbook in the opposite direction as the side
+        /// ["<c>Counterparty</c>"] Use the order price on the orderbook in the opposite direction as the side
         /// </summary>
         [Map("Counterparty")]
         Counterparty

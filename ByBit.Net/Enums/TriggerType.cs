@@ -10,22 +10,22 @@ namespace Bybit.Net.Enums
     public enum TriggerType
     {
         /// <summary>
-        /// Last trade price
+        /// ["<c>LastPrice</c>"] Last trade price
         /// </summary>
         [Map("LastPrice")]
         LastPrice,
         /// <summary>
-        /// Index price
+        /// ["<c>IndexPrice</c>"] Index price
         /// </summary>
         [Map("IndexPrice")]
         IndexPrice,
         /// <summary>
-        /// Mark price
+        /// ["<c>MarkPrice</c>"] Mark price
         /// </summary>
         [Map("MarkPrice")]
         MarkPrice,
         /// <summary>
-        /// Unknown
+        /// ["<c>UNKNOWN</c>"] Unknown
         /// </summary>
         [Map("UNKNOWN", "0")]
         Unknown

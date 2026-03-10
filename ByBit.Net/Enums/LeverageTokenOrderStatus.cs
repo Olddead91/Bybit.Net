@@ -10,17 +10,17 @@ namespace Bybit.Net.Enums
     public enum LeverageTokenOrderStatus
     {
         /// <summary>
-        /// Completed
+        /// ["<c>1</c>"] Completed
         /// </summary>
         [Map("1")]
         Completed,
         /// <summary>
-        /// In progress
+        /// ["<c>2</c>"] In progress
         /// </summary>
         [Map("2")]
         InProgress,
         /// <summary>
-        /// Failed
+        /// ["<c>3</c>"] Failed
         /// </summary>
         [Map("3")]
         Failed,

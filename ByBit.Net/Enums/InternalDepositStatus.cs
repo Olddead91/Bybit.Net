@@ -10,17 +10,17 @@ namespace Bybit.Net.Enums
     public enum InternalDepositStatus
     {
         /// <summary>
-        /// Processing
+        /// ["<c>1</c>"] Processing
         /// </summary>
         [Map("1")]
         Processing,
         /// <summary>
-        /// Success
+        /// ["<c>2</c>"] Success
         /// </summary>
         [Map("2")]
         Success,
         /// <summary>
-        /// Failed
+        /// ["<c>3</c>"] Failed
         /// </summary>
         [Map("3")]
         Failed

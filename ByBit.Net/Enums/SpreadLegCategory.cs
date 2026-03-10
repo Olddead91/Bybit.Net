@@ -10,17 +10,17 @@ namespace Bybit.Net.Enums
     public enum SpreadLegCategory
     {
         /// <summary>
-        /// Combination
+        /// ["<c>combination</c>"] Combination
         /// </summary>
         [Map("combination")]
         Combination,
         /// <summary>
-        /// Spot leg
+        /// ["<c>spot_leg</c>"] Spot leg
         /// </summary>
         [Map("spot_leg")]
         SpotLeg,
         /// <summary>
-        /// Futures leg
+        /// ["<c>future_leg</c>"] Futures leg
         /// </summary>
         [Map("future_leg")]
         FutureLeg

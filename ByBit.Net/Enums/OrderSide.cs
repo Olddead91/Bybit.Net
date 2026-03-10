@@ -10,12 +10,12 @@ namespace Bybit.Net.Enums
     public enum OrderSide
     {
         /// <summary>
-        /// Buy
+        /// ["<c>Buy</c>"] Buy
         /// </summary>
         [Map("Buy", "BUY")]
         Buy,
         /// <summary>
-        /// Sell
+        /// ["<c>Sell</c>"] Sell
         /// </summary>
         [Map("Sell", "SELL")]
         Sell

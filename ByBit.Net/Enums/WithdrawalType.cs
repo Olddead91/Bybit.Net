@@ -10,17 +10,17 @@ namespace Bybit.Net.Enums
     public enum WithdrawalType
     {
         /// <summary>
-        /// On chain
+        /// ["<c>0</c>"] On chain
         /// </summary>
         [Map("0")]
         OnChain,
         /// <summary>
-        /// Off chain
+        /// ["<c>1</c>"] Off chain
         /// </summary>
         [Map("1")]
         OffChain,
         /// <summary>
-        /// Both
+        /// ["<c>2</c>"] Both
         /// </summary>
         [Map("2")]
         Both

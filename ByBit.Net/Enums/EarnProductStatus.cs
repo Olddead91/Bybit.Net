@@ -10,12 +10,12 @@ namespace Bybit.Net.Enums
     public enum EarnProductStatus
     {
         /// <summary>
-        /// Available
+        /// ["<c>Available</c>"] Available
         /// </summary>
         [Map("Available")]
         Available,
         /// <summary>
-        /// Not available
+        /// ["<c>NotAvailable</c>"] Not available
         /// </summary>
         [Map("NotAvailable")]
         NotAvailable

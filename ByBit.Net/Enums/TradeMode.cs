@@ -10,12 +10,12 @@ namespace Bybit.Net.Enums
     public enum TradeMode
     {
         /// <summary>
-        /// Cross margin mode
+        /// ["<c>0</c>"] Cross margin mode
         /// </summary>
         [Map("0")]
         CrossMargin,
         /// <summary>
-        /// Isolated mode
+        /// ["<c>1</c>"] Isolated mode
         /// </summary>
         [Map("1")]
         Isolated

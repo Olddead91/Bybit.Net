@@ -10,17 +10,17 @@ namespace Bybit.Net.Enums
     public enum EarnOrderStatus
     {
         /// <summary>
-        /// Success
+        /// ["<c>Success</c>"] Success
         /// </summary>
         [Map("Success")]
         Success,
         /// <summary>
-        /// Failed
+        /// ["<c>Fail</c>"] Failed
         /// </summary>
         [Map("Fail")]
         Failed,
         /// <summary>
-        /// Pending
+        /// ["<c>Pending</c>"] Pending
         /// </summary>
         [Map("Pending")]
         Pending

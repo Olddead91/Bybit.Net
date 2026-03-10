@@ -10,17 +10,17 @@ namespace Bybit.Net.Enums
     public enum AccountMode
     {
         /// <summary>
-        /// Classic
+        /// ["<c>1</c>"] Classic
         /// </summary>
         [Map("1")]
         Classic,
         /// <summary>
-        /// UMA
+        /// ["<c>2</c>"] UMA
         /// </summary>
         [Map("2")]
         UniversalMarginAccount,
         /// <summary>
-        /// UTA
+        /// ["<c>3</c>"] UTA
         /// </summary>
         [Map("3")]
         UniversalTransferAccount

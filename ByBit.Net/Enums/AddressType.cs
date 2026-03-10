@@ -10,17 +10,17 @@ namespace Bybit.Net.Enums
     public enum AddressType
     {
         /// <summary>
-        /// OnChain Address Type(Regular Address Type and Universal Address Type)
+        /// ["<c>0</c>"] OnChain Address Type(Regular Address Type and Universal Address Type)
         /// </summary>
         [Map("0")]
         OnChain,
         /// <summary>
-        /// Internal Transfer Address Type 
+        /// ["<c>1</c>"] Internal Transfer Address Type 
         /// </summary>
         [Map("1")]
         Internal,
         /// <summary>
-        /// On chain address and internal transfer address type 
+        /// ["<c>2</c>"] On chain address and internal transfer address type 
         /// </summary>
         [Map("2")]
         OnChainAndInternal,
