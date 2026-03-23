@@ -15,13 +15,13 @@ using System.Threading.Tasks;
 
 namespace Bybit.Net
 {
-    internal class BybitAuthenticationProvider : AuthenticationProvider
+    internal class BybitAuthenticationProvider : AuthenticationProvider<BybitCredentials>
     {
         private static readonly IStringMessageSerializer _messageSerializer = new SystemTextJsonMessageSerializer(SerializerOptions.WithConverters(BybitExchange._serializerContext));
 
-        public override ApiCredentialsType[] SupportedCredentialTypes => [ApiCredentialsType.Hmac, ApiCredentialsType.RsaPem, ApiCredentialsType.RsaXml];
+        public override string Key => ApiCredentials.Credential.Key;
 
-        public BybitAuthenticationProvider(ApiCredentials credentials) : base(credentials)
+        public BybitAuthenticationProvider(BybitCredentials credentials) : base(credentials)
         {
         }
 
@@ -36,7 +36,7 @@ namespace Bybit.Net
             if (request.ParameterPosition == HttpMethodParameterPosition.InUri)
             {
                 var queryString = request.GetQueryString();
-                payload = timestamp + _credentials.Key + recvWindow + queryString;
+                payload = timestamp + ApiCredentials.Credential.Key + recvWindow + queryString;
                 request.SetQueryString(queryString);
             }
             else
@@ -44,14 +44,20 @@ namespace Bybit.Net
                 var requestBody = request.BodyFormat == RequestBodyFormat.FormData
                         ? (request.BodyParameters?.ToFormData() ?? string.Empty)
                         : GetSerializedBody(_messageSerializer, request.BodyParameters ?? new Dictionary<string, object>());
-                payload = timestamp + _credentials.Key + recvWindow + requestBody;
+                payload = timestamp + ApiCredentials.Credential.Key + recvWindow + requestBody;
                 request.SetBodyContent(requestBody);
             }
 
-            var signature = _credentials.CredentialType == ApiCredentialsType.Hmac ? SignHMACSHA256(payload) : SignRSASHA256(Encoding.UTF8.GetBytes(payload), SignOutputType.Base64);
+            string signature;
+            if (ApiCredentials.Credential is HMACCredential hmacCred)
+                signature = SignHMACSHA256(hmacCred, payload);
+            else if (ApiCredentials.Credential is RSACredential rsaCred)
+                signature = SignRSASHA256(rsaCred, Encoding.UTF8.GetBytes(payload), SignOutputType.Base64);
+            else
+                throw new NotImplementedException();
 
             request.Headers ??= new Dictionary<string, string>();
-            request.Headers.Add("X-BAPI-API-KEY", _credentials.Key);
+            request.Headers.Add("X-BAPI-API-KEY", ApiCredentials.Credential.Key);
             request.Headers.Add("X-BAPI-SIGN", signature);
             request.Headers.Add("X-BAPI-SIGN-TYPE", "2");
             request.Headers.Add("X-BAPI-TIMESTAMP", timestamp);
@@ -60,32 +66,36 @@ namespace Bybit.Net
 
         public override Query? GetAuthenticationQuery(SocketApiClient apiClient, SocketConnection connection, Dictionary<string, object?>? context = null)
         {
+            var expireTime = DateTimeConverter.ConvertToMilliseconds(GetTimestamp(apiClient).AddSeconds(30))!;
+            var key = ApiCredentials.Credential.Key;
+
+            string sign;
+            if (ApiCredentials.Credential is HMACCredential hmacCred)
+                sign = SignHMACSHA256(hmacCred, $"GET/realtime{expireTime}");
+            else if (ApiCredentials.Credential is RSACredential rsaCred)
+                sign = SignRSASHA256(rsaCred, Encoding.UTF8.GetBytes($"GET/realtime{expireTime}"), SignOutputType.Base64);
+            else
+                throw new NotImplementedException();
+
             if (connection.ConnectionUri.AbsolutePath.EndsWith("private"))
             {
                 // Auth subscription
-                var expireTime = DateTimeConverter.ConvertToMilliseconds(GetTimestamp(apiClient).AddSeconds(30))!;
-                var key = ApiKey;
-                var sign = SignHMACSHA256($"GET/realtime{expireTime}");
-
                 return new BybitQuery(apiClient, "auth", new object[]
                 {
-                key,
-                expireTime,
-                sign
+                    key,
+                    expireTime,
+                    sign
                 });
             }
             else
             {
                 // Trading
-                var expireTime = DateTimeConverter.ConvertToMilliseconds(GetTimestamp(apiClient).AddSeconds(30))!;
-                var key = ApiKey;
-                var sign = SignHMACSHA256($"GET/realtime{expireTime}");
 
                 return new BybitRequestQuery<object>(apiClient, "auth", null, new object[]
                 {
-                key,
-                expireTime,
-                sign
+                    key,
+                    expireTime,
+                    sign
                 });
             }
         }
