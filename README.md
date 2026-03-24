@@ -44,16 +44,32 @@ Bybit.Net is available on [GitHub packages](https://github.com/JKorf/Bybit.Net/p
 The NuGet package files are added along side the source with the latest GitHub release which can found [here](https://github.com/JKorf/Bybit.Net/releases).
 
 ## How to use
-*REST Endpoints*  
-
+*Basic request:*
 ```csharp
 // Get the ETH/USDT ticker via rest request
 var restClient = new BybitRestClient();
 var tickerResult = await restClient.V5Api.ExchangeData.GetSpotTickersAsync("ETHUSDT");
 var lastPrice = tickerResult.Data.List.First().LastPrice;
 ```
-*Websocket streams*  
 
+*Place order:*
+```csharp
+var restClient = new BybitRestClient(opts => {
+	opts.ApiCredentials = new BybitCredentials("APIKEY", "APISECRET");
+});
+
+// Place Limit order to go long for 0.1 ETH at 2000
+var orderResult = await restClient.V5Api.Trading.PlaceOrderAsync(
+    Category.Linear,
+    "ETHUSDT",
+    OrderSide.Buy,
+    NewOrderType.Limit,
+    0.1m,
+    2000,
+    positionIdx: PositionIdx.BuyHedgeMode);
+```
+
+*WebSocket subscription:*
 ```csharp
 // Subscribe to ETH/USDT ticker updates via the websocket API
 var socketClient = new BybitSocketClient();
