@@ -19,6 +19,11 @@ namespace Bybit.Net.Enums
         /// </summary>
         [Map("2")]
         Metals = 2,
+        /// <summary>
+        /// ["<c>3</c>"] Crude oil
+        /// </summary>
+        [Map("3")]
+        CrudeOil = 3,
     }
 
 }
