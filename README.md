@@ -186,6 +186,18 @@ Make a one time donation in a crypto currency of your choice. If you prefer to d
 Alternatively, sponsor me on Github using [Github Sponsors](https://github.com/sponsors/JKorf). 
 
 ## Release notes
+* Version 6.10.0 - 24 Mar 2026
+    * Updated CryptoExchange.Net to version 11.0.1, see https://github.com/JKorf/CryptoExchange.Net/releases/ for full release notes
+    * Updated class for supplying API credentials from ApiCredentials to BybitCredentials
+    * Updated Shared order status parsing to default to Unknown value if not parsable
+    * Added restClient.V5Api.Account.GetSpotMarginAssetDataAsync endpoint
+    * Added support for specifying non-HMAC credentials via Configuration
+    * Added CrudeOil value to AgreementCategory enum
+
+    * Notes for updating:
+        * Update ApiCredentials to BybitCredentials for authentication, i.e. `ApiCredentials = new ApiCredentials(..)` => `ApiCredentials = new BybitCredentials(..)`
+        * When using AddBybit with the Configuration overload (loading config from appsettings), the API credentials path has been changed from ApiCredentials:Key to ApiCredentials:HMAC:Key (and secret)
+
 * Version 6.9.0 - 09 Mar 2026
     * Added restClient.V5Api.Account.SignAgreementAsync endpoint
     * Added restClient.V5Api.Account.GetFundingTransactionHistoryAsync endpoint
