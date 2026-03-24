@@ -1155,6 +1155,19 @@ namespace Bybit.Net.Interfaces.Clients.V5
         Task<WebCallResult<BybitSpotMarginAutoRepayMode[]>> GetSpotMarginAutoRepayModeAsync(string? asset = null, CancellationToken ct = default);
 
         /// <summary>
+        /// Get spot margin borrow asset data
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/spot-margin-uta/currency-data" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/spot-margin-trade/currency-data<br />
+        /// </para>
+        /// </summary>
+        /// <param name="asset">["<c>currency</c>"] Filter by asset</param>
+        /// <param name="ct">Cancellation token</param>
+        Task<WebCallResult<BybitMarginAssetData[]>> GetSpotMarginAssetDataAsync(string? asset = null, CancellationToken ct = default);
+
+        /// <summary>
         /// Sign a trading agreement, required before trading certain products or using certain features
         /// <para>
         /// Docs:<br />

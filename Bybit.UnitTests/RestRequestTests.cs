@@ -75,6 +75,7 @@ namespace Bybit.Net.UnitTests
             await tester.ValidateAsync(client => client.V5Api.Account.SignAgreementAsync(AgreementCategory.Metals, true), "SignAgreement");
             await tester.ValidateAsync(client => client.V5Api.Account.GetFundingTransactionHistoryAsync(), "GetFundingTransactionHistory", nestedJsonProperty: "result.list");
             await tester.ValidateAsync(client => client.V5Api.Account.GetAssetOverviewAsync(), "GetAssetOverview", nestedJsonProperty: "result");
+            await tester.ValidateAsync(client => client.V5Api.Account.GetSpotMarginAssetDataAsync(), "GetBorrowAssetData", nestedJsonProperty: "result.list");
         }
 
         [Test]
