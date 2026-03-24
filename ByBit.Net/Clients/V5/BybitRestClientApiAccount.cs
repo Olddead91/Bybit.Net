@@ -1103,8 +1103,8 @@ namespace Bybit.Net.Clients.V5
             var parameters = new ParameterCollection();
             parameters.AddOptional("currency", asset);
             var request = _definitions.GetOrCreate(HttpMethod.Get, "/v5/spot-margin-trade/currency-data", BybitExchange.RateLimiter.BybitRest, 1, false);
-            var result = await _baseClient.SendAsync<BybitMarginAssetData[]>(request, parameters, ct).ConfigureAwait(false);
-            return result;
+            var result = await _baseClient.SendAsync<BybitList<BybitMarginAssetData>>(request, parameters, ct).ConfigureAwait(false);
+            return result.As<BybitMarginAssetData[]>(result.Data?.List);
         }
 
         #endregion
