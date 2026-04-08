@@ -1499,10 +1499,16 @@ namespace Bybit.Net.Clients.V5
         #region Get Asset Overview
 
         /// <inheritdoc />
-        public async Task<WebCallResult<BybitAccountOverview>> GetAssetOverviewAsync(string? memberId = null, CancellationToken ct = default)
+        public async Task<WebCallResult<BybitAccountOverview>> GetAssetOverviewAsync(
+            string? memberId = null,
+            string? valuationAsset = null,
+            AssetAccountType? accountType = null,
+            CancellationToken ct = default)
         {
             var parameters = new ParameterCollection();
             parameters.AddOptional("memberId", memberId);
+            parameters.AddOptional("valuationCurrency", valuationAsset);
+            parameters.AddOptionalEnum("accountType", accountType);
             var request = _definitions.GetOrCreate(HttpMethod.Get, "/v5/asset/asset-overview", BybitExchange.RateLimiter.BybitRest, 1, true);
             var result = await _baseClient.SendAsync<BybitAccountOverview>(request, parameters, ct).ConfigureAwait(false);
             return result;

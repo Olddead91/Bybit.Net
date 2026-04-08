@@ -1207,8 +1207,14 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// </para>
         /// </summary>
         /// <param name="memberId">["<c>memberId</c>"] User ID. When using master API key to query sub account assets, this field is required</param>
+        /// <param name="valuationAsset">["<c>valuationCurrency</c>"] Valuation fiat asset, defaults to USD</param>
+        /// <param name="accountType">["<c>accountType</c>"] Account type filter</param>
         /// <param name="ct">Cancellation token</param>
-        Task<WebCallResult<BybitAccountOverview>> GetAssetOverviewAsync(string? memberId = null, CancellationToken ct = default);   
+        Task<WebCallResult<BybitAccountOverview>> GetAssetOverviewAsync(
+            string? memberId = null,
+            string? valuationAsset = null,
+            AssetAccountType? accountType = null,
+            CancellationToken ct = default);   
 
     }
 }
