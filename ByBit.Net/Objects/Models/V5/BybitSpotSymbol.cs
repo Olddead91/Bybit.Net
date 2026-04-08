@@ -40,6 +40,11 @@ namespace Bybit.Net.Objects.Models.V5
         [JsonPropertyName("symbolType")]
         public SymbolType? SymbolType { get; set; }
         /// <summary>
+        /// Xstock multiplier
+        /// </summary>
+        [JsonPropertyName("xstockMultiplier")]
+        public decimal? XstockMultiplier { get; set; }
+        /// <summary>
         /// ["<c>lotSizeFilter</c>"] Lot size order filter
         /// </summary>
         [JsonPropertyName("lotSizeFilter")]
