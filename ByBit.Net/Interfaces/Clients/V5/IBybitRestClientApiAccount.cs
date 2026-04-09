@@ -1214,7 +1214,26 @@ namespace Bybit.Net.Interfaces.Clients.V5
             string? memberId = null,
             string? valuationAsset = null,
             AssetAccountType? accountType = null,
-            CancellationToken ct = default);   
+            CancellationToken ct = default);
+
+        /// <summary>
+        /// Get max order quantity for spread trading
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/spread/trade/max-qty" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/spread/max-qty<br />
+        /// </para>
+        /// </summary>
+        /// <param name="symbol">["<c>symbol</c>"] The symbol, for example `ETHUSDT`</param>
+        /// <param name="side">["<c>side</c>"] Order side</param>
+        /// <param name="price">["<c>orderPrice</c>"] Order price</param>
+        /// <param name="ct">Cancellation token</param>
+        Task<WebCallResult<BybitMaxSpreadQuantity>> GetSpreadMaxOrderQuantityAsync(
+            string symbol,
+            OrderSide side,
+            decimal price,
+            CancellationToken ct = default);
 
     }
 }

@@ -15,7 +15,7 @@ namespace Bybit.Net.Converters
     [JsonSerializable(typeof(BybitResult<BybitSmallBalancesQuoteResult>))]
     [JsonSerializable(typeof(BybitResult<BybitPage<BybitSmallBalancesExchangeItem>>))]
     [JsonSerializable(typeof(BybitResult<BybitSpotMarginAutoRepayModeWrapper>))]
-
+    [JsonSerializable(typeof(BybitResult<BybitMaxSpreadQuantity>))]
 
     [JsonSerializable(typeof(BybitExtResult<BybitList<BybitBatchOrderId>, BybitList<BybitBatchResult>>))]
     [JsonSerializable(typeof(BybitRequestQueryResponse<BybitList<BybitBatchOrderId>, BybitList<BybitBatchResult>>))]

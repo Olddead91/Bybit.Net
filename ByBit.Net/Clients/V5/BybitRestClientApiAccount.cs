@@ -1516,5 +1516,25 @@ namespace Bybit.Net.Clients.V5
 
         #endregion
 
+        #region Get Spread Max Order Quantity
+
+        /// <inheritdoc />
+        public async Task<WebCallResult<BybitMaxSpreadQuantity>> GetSpreadMaxOrderQuantityAsync(
+            string symbol,
+            OrderSide side,
+            decimal price,
+            CancellationToken ct = default)
+        {
+            var parameters = new ParameterCollection();
+            parameters.Add("symbol", symbol);
+            parameters.Add("side", side == OrderSide.Buy ? 1 : 2);
+            parameters.Add("orderPrice", price);
+            var request = _definitions.GetOrCreate(HttpMethod.Get, "/v5/spread/max-qty", BybitExchange.RateLimiter.BybitRest, 1, true);
+            var result = await _baseClient.SendAsync<BybitMaxSpreadQuantity>(request, parameters, ct).ConfigureAwait(false);
+            return result;
+        }
+
+        #endregion
+
     }
 }
