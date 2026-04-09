@@ -1,4 +1,5 @@
 using Bybit.Net.Objects.Internal;
+using Bybit.Net.Objects.Models;
 using Bybit.Net.Objects.Models.V5;
 using Bybit.Net.Objects.Sockets;
 using System;
@@ -8,6 +9,7 @@ using System.Text.Json.Serialization;
 namespace Bybit.Net.Converters
 {
     [JsonSerializable(typeof(BybitResult<BybitList<BybitMarginAssetData>>))]
+    [JsonSerializable(typeof(BybitResult<BybitOptionAssetInfoWrapper[]>))]
     [JsonSerializable(typeof(BybitResult<BybitAccountOverview>))]
     [JsonSerializable(typeof(BybitResult<BybitResponse<BybitFundingTransfer>>))]
     [JsonSerializable(typeof(BybitResult<BybitSmallBalanceAssets>))]

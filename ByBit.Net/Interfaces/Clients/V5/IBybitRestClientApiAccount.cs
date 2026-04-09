@@ -1235,5 +1235,17 @@ namespace Bybit.Net.Interfaces.Clients.V5
             decimal price,
             CancellationToken ct = default);
 
+        /// <summary>
+        /// Get option asset info
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/account/option-asset-info" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/account/option-asset-info<br />
+        /// </para>
+        /// </summary>
+        /// <param name="ct">Cancellation token</param>
+        Task<WebCallResult<BybitOptionAssetInfo[]>> GetOptionAssetInfoAsync(CancellationToken ct = default);
+
     }
 }
