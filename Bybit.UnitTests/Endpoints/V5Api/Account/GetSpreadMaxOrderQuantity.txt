@@ -1,6 +1,6 @@
 GET
 /v5/spread/max-qty
-false
+true
 {
     "retCode": 0,
     "retMsg": "Success",

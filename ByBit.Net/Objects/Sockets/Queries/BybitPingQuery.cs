@@ -1,5 +1,6 @@
 ﻿using CryptoExchange.Net;
 using CryptoExchange.Net.Sockets;
+using CryptoExchange.Net.Sockets.Default.Routing;
 using System;
 
 namespace Bybit.Net.Objects.Sockets.Queries
