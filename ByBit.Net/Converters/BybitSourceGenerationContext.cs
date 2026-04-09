@@ -9,6 +9,7 @@ using System.Text.Json.Serialization;
 namespace Bybit.Net.Converters
 {
     [JsonSerializable(typeof(BybitResult<BybitList<BybitMarginAssetData>>))]
+    [JsonSerializable(typeof(BybitResult<BybitAnalysisTradeInfo>))]
     [JsonSerializable(typeof(BybitResult<BybitOptionAssetInfoWrapper[]>))]
     [JsonSerializable(typeof(BybitResult<BybitAccountOverview>))]
     [JsonSerializable(typeof(BybitResult<BybitResponse<BybitFundingTransfer>>))]

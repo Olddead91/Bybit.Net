@@ -1247,5 +1247,24 @@ namespace Bybit.Net.Interfaces.Clients.V5
         /// <param name="ct">Cancellation token</param>
         Task<WebCallResult<BybitOptionAssetInfo[]>> GetOptionAssetInfoAsync(CancellationToken ct = default);
 
+        /// <summary>
+        /// Get trade statistics for analysis
+        /// <para>
+        /// Docs:<br />
+        /// <a href="https://bybit-exchange.github.io/docs/v5/account/trade-info-for-analysis" /><br />
+        /// Endpoint:<br />
+        /// GET /v5/account/trade-info-for-analysis<br />
+        /// </para>
+        /// </summary>
+        /// <param name="symbol">["<c>symbol</c>"] The symbol, for example `ETHUSDT`</param>
+        /// <param name="startTime">["<c>startTime</c>"] Filter by start time</param>
+        /// <param name="endTime">["<c>endTime</c>"] Filter by end time</param>
+        /// <param name="ct">Cancellation token</param>
+        Task<WebCallResult<BybitAnalysisTradeInfo>> GetAnalysisTradeInfoAsync(
+            string symbol,
+            DateTime? startTime = null,
+            DateTime? endTime = null,
+            CancellationToken ct = default);
+
     }
 }

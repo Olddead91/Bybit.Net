@@ -1548,5 +1548,25 @@ namespace Bybit.Net.Clients.V5
 
         #endregion
 
+        #region Get Analysis Trade Info
+
+        /// <inheritdoc />
+        public async Task<WebCallResult<BybitAnalysisTradeInfo>> GetAnalysisTradeInfoAsync(
+            string symbol,
+            DateTime? startTime = null,
+            DateTime? endTime = null,
+            CancellationToken ct = default)
+        {
+            var parameters = new ParameterCollection();
+            parameters.Add("symbol", symbol);
+            parameters.AddOptionalMillisecondsString("startTime", startTime);
+            parameters.AddOptionalMillisecondsString("endTime", endTime);
+            var request = _definitions.GetOrCreate(HttpMethod.Get, "/v5/account/trade-info-for-analysis", BybitExchange.RateLimiter.BybitRest, 1, true);
+            var result = await _baseClient.SendAsync<BybitAnalysisTradeInfo>(request, parameters, ct).ConfigureAwait(false);
+            return result;
+        }
+
+        #endregion
+
     }
 }

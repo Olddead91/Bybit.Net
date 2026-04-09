@@ -78,6 +78,7 @@ namespace Bybit.Net.UnitTests
             await tester.ValidateAsync(client => client.V5Api.Account.GetSpotMarginAssetDataAsync(), "GetBorrowAssetData", nestedJsonProperty: "result.list");
             await tester.ValidateAsync(client => client.V5Api.Account.GetSpreadMaxOrderQuantityAsync("123", OrderSide.Buy, 0.1m), "GetSpreadMaxOrderQuantity", nestedJsonProperty: "result");
             await tester.ValidateAsync(client => client.V5Api.Account.GetOptionAssetInfoAsync(), "GetOptionAssetInfo", nestedJsonProperty: "result.result");
+            await tester.ValidateAsync(client => client.V5Api.Account.GetAnalysisTradeInfoAsync("123"), "GetAnalysisTradeInfo", nestedJsonProperty: "result");
         }
 
         [Test]
