@@ -1542,8 +1542,8 @@ namespace Bybit.Net.Clients.V5
         public async Task<WebCallResult<BybitOptionAssetInfo[]>> GetOptionAssetInfoAsync(CancellationToken ct = default)
         {
             var request = _definitions.GetOrCreate(HttpMethod.Get, "/v5/account/option-asset-info", BybitExchange.RateLimiter.BybitRest, 1, true);
-            var result = await _baseClient.SendAsync<BybitOptionAssetInfoWrapper[]>(request, null, ct).ConfigureAwait(false);
-            return result.As<BybitOptionAssetInfo[]>(result.Data?.First().Result);
+            var result = await _baseClient.SendAsync<BybitOptionAssetInfoWrapper>(request, null, ct).ConfigureAwait(false);
+            return result.As<BybitOptionAssetInfo[]>(result.Data?.Result);
         }
 
         #endregion
